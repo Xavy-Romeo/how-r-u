@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-const { Schema } = mongoose;
+const { Schema, model } = require('mongoose');
 
 const emotionSchema = new Schema({
     name: {
@@ -15,6 +13,6 @@ const emotionSchema = new Schema({
     }
 });
 
-const Emotion = mongoose.model('Emotion', emotionSchema);
+const Emotion = model('Emotion', emotionSchema);
 
 module.exports = Emotion;

@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-const { Schema } = mongoose;
+const { Schema, model } = require('mongoose');
 
 const meditationSchema = new Schema({
     title: {
@@ -30,6 +28,6 @@ const meditationSchema = new Schema({
     }
 });
 
-const Meditation = mongoose.model('Meditation', meditationSchema);
+const Meditation = model('Meditation', meditationSchema);
 
 module.exports = Meditation;

@@ -1,6 +1,4 @@
-const mongoose = require('mongoose');
-
-const { Schema } = mongoose;
+const { Schema, model } = require('mongoose');
 
 const activitySchema = new Schema({
     title: {
@@ -34,6 +32,6 @@ const activitySchema = new Schema({
 
 });
 
-const Activity = mongoose.model('Activity', activitySchema);
+const Activity = model('Activity', activitySchema);
 
 module.exports = Activity;
