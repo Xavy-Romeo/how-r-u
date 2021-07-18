@@ -31,7 +31,7 @@ function App() {
     
     {
       name: "Books",
-      description: "Maultiple books by many authors who can offer guidance.",
+      description: "Multiple books by many authors who can offer guidance.",
     },
   ]);
 
