@@ -1,7 +1,6 @@
-import React from "react";
-import logo from "../logo330.png";
+import React, { useState } from "react";
+import logo from "../src/assets/logo330.png";
 import './App.css';
-
 
 import {
   BrowserRouter as Router,
@@ -58,22 +57,22 @@ function App() {
             <div class="row">
               <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
                 <div class="mood logo">
-                  img src={logo}
+                  <img src={logo} />
                 </div>
                 </div>
                 <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
                 <div class="mood logo">
-                  img src={logo}
+                  <img src={logo} />
                 </div>
                 </div>
                 <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
                 <div class="mood logo">
-                  img src={logo}
+                  <img src={logo} />
                 </div>
                 </div>
                 <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
                 <div class="mood logo">
-                  img src={logo}
+                  <img src={logo} />
                 </div>
               </div>
             </div>
