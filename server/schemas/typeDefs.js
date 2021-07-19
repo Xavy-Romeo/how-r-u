@@ -13,13 +13,51 @@ const typeDefs = gql`
         password: String
     }
 
+    type Emotion {
+        name: String
+        description: String
+    }
+
+    type Activity {
+        title: String
+        date: String
+        description: String
+        location: String
+        image: String
+        link: String
+        emotion: Emotion
+    }
+
+    type Book {
+        title: String
+        description: String
+        authors: [String]
+        image: String
+        link: String
+        emotion: Emotion
+    }
+   
+    type Meditation {
+        title: String
+        authors: [String]
+        description: String
+        image: String
+        link: String
+        emotion: Emotion
+    }
+
     type Query {
         users: [User]
         user(username: String!): User
+        emotion: Emotion
+        activity: Activity
+        book: Book
+        meditation: Meditation
     }
 
     type Mutation {
         addUser(firstName: String!, lastName: String!, username: String!, email: String!, password: String!): User
+        login(username: String!, password: String!): User
     }
 
 `;
