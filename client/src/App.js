@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "./logo330.png";
+
 import '../src/App.css';
 
 
@@ -41,11 +41,11 @@ function App() {
   const [contactSelected, setContactSelected] = useState(false);
 
   return (
-    <div className="App">
+    <div>
         <Router>
         <div>
-        <Header>
-        categories={categories}
+        <Header />
+        {/* categories={categories}
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
         contactSelected={contactSelected}
@@ -55,15 +55,15 @@ function App() {
           <img src={logo} alt="Logo" />;
 
             <h1 className="headertitle">How Are You Today?</h1>
-            <p> An Outer tool For Inner Peace</p>
-            </Header>
+            <p> An Outer tool For Inner Peace</p> */}
+            {/* </Header> */}
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
           <Switch>
             {/* <Route path="/home">
               <Home />
             </Route> */}
-            <div class="row">
+            {/* <div class="row">
               <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
                 <div class="mood logo">
                   img src={logo}
@@ -84,7 +84,7 @@ function App() {
                   img src={logo}
                 </div>
               </div>
-            </div>
+            </div> */}
             <Route path="/happy">
              <Happy />
             </Route>
