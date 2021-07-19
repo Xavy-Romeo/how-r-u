@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../src/assets/logo330.png";
+import logo from "./assets/logo330.png";
 import './App.css';
 
 import {
@@ -42,7 +42,14 @@ function App() {
     <div className="App">
         <Router>
         <div>
-          <Header>
+        <Header>
+        categories={categories}
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}
+        contactSelected={contactSelected}
+        setContactSelected={setContactSelected}
+      
+          
           <img src={logo} alt="Logo" />;
 
             <h1 className="headertitle">How Are You Today?</h1>
