@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import '../src/App.css';
 
@@ -22,23 +22,23 @@ import Home from "./components/Home";
 
 function App() {
 
-  const [categories] = useState([
-    {
-      name: "Meditation/Music",
-      description:
-        "Guided and unguided meditation videos and music to help calm the mind and soul.",
-    },
-    { name: "Activities", description: "Activities and exercises that keep the body moving and help to relieve stress." },
+  // const [categories] = useState([
+  //   {
+  //     name: "Meditation/Music",
+  //     description:
+  //       "Guided and unguided meditation videos and music to help calm the mind and soul.",
+  //   },
+  //   { name: "Activities", description: "Activities and exercises that keep the body moving and help to relieve stress." },
     
-    {
-      name: "Books",
-      description: "Multiple books by many authors who can offer guidance.",
-    },
-  ]);
+  //   {
+  //     name: "Books",
+  //     description: "Multiple books by many authors who can offer guidance.",
+  //   },
+  // ]);
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  // const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
-  const [contactSelected, setContactSelected] = useState(false);
+  // const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <div>
