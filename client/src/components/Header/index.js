@@ -13,6 +13,7 @@ import okay from "../../assets/okay.jpg";
 import anxious from "../../assets/anxious.jpg";
 import sad from "../../assets/sad.jpg";
 
+
 const meditation = [
   {
     mydata:
