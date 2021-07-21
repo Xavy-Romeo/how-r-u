@@ -1,13 +1,5 @@
-import React, { useState } from "react";
-<<<<<<< HEAD
-import logo from "./assets/logo330.png";
-import './App.css';
-=======
-
+import React from "react";
 import '../src/App.css';
-
-
->>>>>>> ba8f3df3d1913cb3b1fef6e73a4acd7730671087
 
 import {
   BrowserRouter as Router,
@@ -27,23 +19,23 @@ import Home from "./components/Home";
 
 function App() {
 
-  const [categories] = useState([
-    {
-      name: "Meditation/Music",
-      description:
-        "Guided and unguided meditation videos and music to help calm the mind and soul.",
-    },
-    { name: "Activities", description: "Activities and exercises that keep the body moving and help to relieve stress." },
+  // const [categories] = useState([
+  //   {
+  //     name: "Meditation/Music",
+  //     description:
+  //       "Guided and unguided meditation videos and music to help calm the mind and soul.",
+  //   },
+  //   { name: "Activities", description: "Activities and exercises that keep the body moving and help to relieve stress." },
     
-    {
-      name: "Books",
-      description: "Multiple books by many authors who can offer guidance.",
-    },
-  ]);
+  //   {
+  //     name: "Books",
+  //     description: "Multiple books by many authors who can offer guidance.",
+  //   },
+  // ]);
 
-  const [currentCategory, setCurrentCategory] = useState(categories[0]);
+  // const [currentCategory, setCurrentCategory] = useState(categories[0]);
 
-  const [contactSelected, setContactSelected] = useState(false);
+  // const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <div>
