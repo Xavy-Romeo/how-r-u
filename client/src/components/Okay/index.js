@@ -37,7 +37,6 @@ export default function Okay() {
   return (
     <div>
       {" "}
-      return (
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
           <div className="App">
