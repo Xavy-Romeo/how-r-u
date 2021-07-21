@@ -11,8 +11,7 @@ import Avatar from "@material-ui/core/Avatar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { red } from "@material-ui/core/colors";
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import ShareIcon from "@material-ui/icons/Share";
+
 import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import MoreVertIcon from "@material-ui/icons/MoreVert";
 import logo1200 from "../../assets/logo1200.png";
@@ -40,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Tools({ mydata, meditation, whyMeditation }) {
+export default function Tools({ mydata, meditation, whyMeditation, activities, whyActivities, books, whyBooks, Mindfulness }) {
   const classes = useStyles();
   const [expanded, setExpanded] = React.useState(false);
 
@@ -62,7 +61,7 @@ export default function Tools({ mydata, meditation, whyMeditation }) {
               <MoreVertIcon />
             </IconButton>
           }
-          title="Meditation/Music"
+          title={Mindfulness}
         />
         <CardMedia
           className={classes.media}
@@ -75,12 +74,8 @@ export default function Tools({ mydata, meditation, whyMeditation }) {
           </Typography>
         </CardContent>
         <CardActions disableSpacing>
-          <IconButton aria-label="add to favorites">
-            <FavoriteIcon />
-          </IconButton>
-          <IconButton aria-label="share">
-            <ShareIcon />
-          </IconButton>
+         
+         
           <IconButton
             className={clsx(classes.expand, {
               [classes.expandOpen]: expanded,
@@ -97,6 +92,10 @@ export default function Tools({ mydata, meditation, whyMeditation }) {
             <Typography paragraph>Method:</Typography>
             <Typography paragraph>{meditation}</Typography>
             <Typography paragraph>{whyMeditation}</Typography>
+            <Typography paragraph>{activities}</Typography>
+            <Typography paragraph>{whyActivities}</Typography>
+            <Typography paragraph>{books}</Typography>
+            <Typography paragraph>{whyBooks}</Typography>
           </CardContent>
         </Collapse>
       </Card>
