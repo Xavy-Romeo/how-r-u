@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-import React from 'react';
-import '../../App.css';
-
-=======
 import React from "react";
 import "../../App.css";
->>>>>>> ba8f3df3d1913cb3b1fef6e73a4acd7730671087
 
 import Button from "@material-ui/core/Button";
 

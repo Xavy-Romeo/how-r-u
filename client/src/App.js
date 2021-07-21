@@ -1,13 +1,6 @@
 import React, { useState } from "react";
-<<<<<<< HEAD
-import logo from "./assets/logo330.png";
-import './App.css';
-=======
 
 import '../src/App.css';
-
-
->>>>>>> ba8f3df3d1913cb3b1fef6e73a4acd7730671087
 
 import {
   BrowserRouter as Router,
