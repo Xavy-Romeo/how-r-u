@@ -107,7 +107,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Header({ currentMood, setCurrentMood }) {
+export default function Header() {
   const [location, setLocation] = useState('')
   const [urlEndpoint, setUrlEndpoint] = useState('HOME')
   const classes = useStyles()
@@ -151,9 +151,11 @@ export default function Header({ currentMood, setCurrentMood }) {
           <Typography variant="h6">
             How Are You Today?
           </Typography>
-          <Button onClick={() => {setCurrentMood("None")}}>
-            <Typography>{urlEndpoint}</Typography>
-          </Button>
+            <Button 
+              // onClick={() => {setCurrentMood("None")}}
+            >
+              <Typography>{urlEndpoint}</Typography>
+            </Button>
         </Toolbar>
       </AppBar>
       <Box className={classes.blankTopHeader}></Box>
@@ -197,7 +199,7 @@ export default function Header({ currentMood, setCurrentMood }) {
         <Box>
           <NavLink to="/happy">
             <img
-              onClick={() => {setCurrentMood("Happy")}}
+              // onClick={() => {setCurrentMood("Happy")}}
               className={classes.imgStyle}
               width="100"
               height="100"

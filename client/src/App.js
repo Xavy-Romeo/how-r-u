@@ -20,15 +20,15 @@ import Home from "./components/Home";
 function App() {
 
   // mood sections array
-  const [moodSection] = useState([
-    {name: 'Happy'},
-    {name: 'Okay'},
-    {name: 'Anxious'},
-    {name: 'Sad'}
-  ]);
+  // const [moodSection] = useState([
+  //   {name: 'Happy'},
+  //   {name: 'Okay'},
+  //   {name: 'Anxious'},
+  //   {name: 'Sad'}
+  // ]);
 
   // useState hook to set current mood section
-  const [currentMood, setCurrentMood] = useState(moodSection[0]);
+  // const [currentMood, setCurrentMood] = useState(moodSection[0]);
   
   // const [categories] = useState([
   //   {
@@ -53,8 +53,8 @@ function App() {
         <Router>
         <div>
         <Header 
-          currentMood={currentMood}
-          setCurrentMood={setCurrentMood}
+          // currentMood={currentMood}
+          // setCurrentMood={setCurrentMood}
         />
 
         {/* categories={categories}
@@ -99,7 +99,10 @@ function App() {
             </div> */}
             <Route path="/happy">
              
-             <Happy />
+             <Happy 
+                // currentMood={currentMood}
+                // setCurrentMood={setCurrentMood}
+             />
             </Route>
             <Route path="/okay">
               <Okay />
