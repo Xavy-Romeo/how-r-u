@@ -15,6 +15,7 @@ import anxious from "../../assets/anxious.jpg";
 import sad from "../../assets/sad.jpg";
 import { LOGIN_USER } from '../../utils/mutations';
 import Login from "../Login";
+import Signup from "../SignUp";
 
 
 const meditation = [
@@ -109,14 +110,17 @@ const useStyles = makeStyles({
 });
 
 export default function Header() {
-  const [location, setLocation] = useState('')
-  const [urlEndpoint, setUrlEndpoint] = useState('HOME')
-  const classes = useStyles()
+  const [location, setLocation] = useState('');
+  const [urlEndpoint, setUrlEndpoint] = useState('HOME');
+  const classes = useStyles();
   console.log('=================Location===================');
   console.log(location);
   console.log('=================Location===================');
 
   let presentLocation = useLocation();
+
+  const [loginModal, setLoginModal] = useState(false);
+  const [signupModal, setSignupModal] = useState(false);
 
   useEffect(() => {
     setLocation(presentLocation.pathname)
@@ -175,14 +179,16 @@ export default function Header() {
             <Box>
               <Login 
                 classes={classes}
+                loginModal={loginModal}
+                setLoginModal={setLoginModal}
+                signupModal={signupModal}
               />
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Signup
-              </Button>
+              <Signup
+                classes={classes}
+                signupModal={signupModal}
+                setSignupModal={setSignupModal}
+                loginModal={loginModal}
+              />
             </Box>
           </Box>
         : true

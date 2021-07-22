@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import Button from "@material-ui/core/Button";
 import './Login.css';
 
-export default function Login({ classes }) {
-     
-    const [modalOpen, setModalOpen] = useState(false);
-
-    if (modalOpen) {
+export default function Login({ classes, loginModal, setLoginModal, signupModal }) {
+    
+    const loginSubmit = event => event.preventDefault();
+    
+    if (loginModal) {
         document.body.classList.add('modal-active');
     }
     else {
@@ -15,9 +15,9 @@ export default function Login({ classes }) {
     
     return (
         <>
-            {!modalOpen && (
+            {!loginModal && !signupModal && (
                 <Button
-                    onClick={() => {setModalOpen(true)}}
+                    onClick={() => {setLoginModal(true)}}
                     variant="contained"
                     color="primary"
                     className={classes.button}
@@ -26,7 +26,7 @@ export default function Login({ classes }) {
                 </Button>
             )}
 
-            {modalOpen && (
+            {loginModal && (
                 <div className="login-modal">
                     <div className="overlay"></div>
                     <div className="login-container">
@@ -34,12 +34,18 @@ export default function Login({ classes }) {
                             <h3>Login</h3>
                             
                             <label for="username">Username:</label>
-                            <input type="text" placeholder="Username" name="username"></input>
+                            <input type="text" placeholder="Username" name="username" id="login-username"></input>
 
                             <label for="password">Password:</label>
-                            <input type="text" placeholder="Password" name="password"></input>
+                            <input type="text" placeholder="Password" name="password" id="login-password"></input>
                             <div className="button-div">
-                                <button type="submit" onClick={() => {setModalOpen(false)}}>Login</button>   
+                                <button 
+                                    type="submit" 
+                                    onClick={() => {
+                                        loginSubmit()
+                                        setLoginModal(false)                                        
+                                    }}
+                                >Login</button>   
                             </div>
                         </form>
                     </div>
