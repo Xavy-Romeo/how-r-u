@@ -2,6 +2,7 @@ import React from "react";
 import "../../App.css";
 
 import Button from "@material-ui/core/Button";
+import { NavLink } from "react-router-dom";
 
 import {
   makeStyles,
@@ -45,7 +46,9 @@ export default function Sad() {
               <AppBar color="secondary">
                 <Toolbar>
                   <Typography variant="h6">How Are You Today?</Typography>
-                  <Button>Home</Button>
+                  <NavLink to="/">
+                    <Button>Home</Button>
+                  </NavLink>
                 </Toolbar>
               </AppBar>
               <Typography variant="h2" component="div">

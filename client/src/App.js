@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import '../src/App.css';
 
 import {
@@ -19,6 +19,17 @@ import Home from "./components/Home";
 
 function App() {
 
+  // mood sections array
+  // const [moodSection] = useState([
+  //   {name: 'Happy'},
+  //   {name: 'Okay'},
+  //   {name: 'Anxious'},
+  //   {name: 'Sad'}
+  // ]);
+
+  // useState hook to set current mood section
+  // const [currentMood, setCurrentMood] = useState(moodSection[0]);
+  
   // const [categories] = useState([
   //   {
   //     name: "Meditation/Music",
@@ -41,7 +52,11 @@ function App() {
     <div>
         <Router>
         <div>
-        <Header />
+        <Header 
+          // currentMood={currentMood}
+          // setCurrentMood={setCurrentMood}
+        />
+
         {/* categories={categories}
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
@@ -83,7 +98,11 @@ function App() {
               </div>
             </div> */}
             <Route path="/happy">
-             <Happy />
+             
+             <Happy 
+                // currentMood={currentMood}
+                // setCurrentMood={setCurrentMood}
+             />
             </Route>
             <Route path="/okay">
               <Okay />
