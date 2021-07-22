@@ -2,6 +2,7 @@ import React from "react";
 import "../../App.css";
 
 import Button from "@material-ui/core/Button";
+import { NavLink } from "react-router-dom";
 
 import {
   makeStyles,
@@ -20,7 +21,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 const theme = createMuiTheme({
   typography: {
     h2: {
-      fontSize: 24,
+      fontSize: 50, 
+      fontWeight:"bold"
     },
   },
   palette: {
@@ -37,7 +39,6 @@ export default function Sad() {
   return (
     <div>
       {" "}
-      return (
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
           <div className="App">
@@ -45,7 +46,9 @@ export default function Sad() {
               <AppBar color="secondary">
                 <Toolbar>
                   <Typography variant="h6">How Are You Today?</Typography>
-                  <Button>Home</Button>
+                  <NavLink to="/">
+                    <Button>Home</Button>
+                  </NavLink>
                 </Toolbar>
               </AppBar>
               <Typography variant="h2" component="div">
@@ -55,28 +58,25 @@ export default function Sad() {
                 Tools and Techniques To Help You Find A New Way!
               </Typography>
 
-              <Grid container spacing={8} justify="center">
-                <Grid item xs={12} sm={6}>
+              <Grid container spacing={4} justify="center">
+                <Grid item xs={12} sm={3}>
+                <h2>Meditation</h2>
+                  <Paper style={{ height: 75, width: "100%" }} >checking</Paper>
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                <h2>Activities</h2>
+                  <Paper style={{ height: 75, width: "100%"}} />
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                <h2>Books</h2>
                   <Paper style={{ height: 75, width: "100%" }} />
-                  <h2>Meditation</h2>
-                </Grid>
-                <Grid item xl={12}>
-                  <Paper style={{ height: 75, width: 50 }} />
-                  <h2>Activities</h2>
-                </Grid>
-                <Grid item>
-                  <Paper style={{ height: 75, width: 50 }} />
-                </Grid>
-                <Grid item>
-                  <Paper style={{ height: 75, width: 50 }} />
-                  <h2>Books</h2>
                 </Grid>
               </Grid>
+          
             </header>
           </div>
         </Container>
       </ThemeProvider>
-      )
     </div>
   );
 }

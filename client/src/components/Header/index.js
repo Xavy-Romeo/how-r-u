@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useMutation } from "@apollo/client";
 import { NavLink, useLocation } from "react-router-dom";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -12,6 +13,7 @@ import happy from "../../assets/happy.jpg";
 import okay from "../../assets/okay.jpg";
 import anxious from "../../assets/anxious.jpg";
 import sad from "../../assets/sad.jpg";
+import { LOGIN_USER } from '../../utils/mutations'
 
 
 const meditation = [
@@ -149,41 +151,45 @@ export default function Header() {
           <Typography variant="h6">
             How Are You Today?
           </Typography>
-          <Button>
-            <Typography>{urlEndpoint}</Typography>
-          </Button>
+            <Button 
+              // onClick={() => {setCurrentMood("None")}}
+            >
+              <Typography>{urlEndpoint}</Typography>
+            </Button>
         </Toolbar>
       </AppBar>
       <Box className={classes.blankTopHeader}></Box>
-      <Box
-        display="flex"
-        flexWrap="wrap"
-        justifyContent="space-between"
-        className={classes.topHeader}
-      >
-        <Box>
-          <NavLink to="/">
-            <img width="400" height="400" src={logo_transparent} alt="logo" />
-          </NavLink>
-        </Box>
-        <Box>
-          
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
+      {urlEndpoint === "HOME"
+        ? <Box
+            display="flex"
+            flexWrap="wrap"
+            justifyContent="space-between"
+            className={classes.topHeader}
           >
-            Login
-          </Button>
-          <Button
-            variant="contained"
-            color="primary"
-            className={classes.button}
-          >
-            Signup
-          </Button>
-        </Box>
-      </Box>
+            <Box>
+              <NavLink to="/">
+                <img width="400" height="400" src={logo_transparent} alt="logo" />
+              </NavLink>
+            </Box>
+            <Box>
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.button}
+              >
+                Login
+              </Button>
+              <Button
+                variant="contained"
+                color="primary"
+                className={classes.button}
+              >
+                Signup
+              </Button>
+            </Box>
+          </Box>
+        : true
+      }
       <Box
         display="flex"
         flexWrap="nowrap"
@@ -193,6 +199,7 @@ export default function Header() {
         <Box>
           <NavLink to="/happy">
             <img
+              // onClick={() => {setCurrentMood("Happy")}}
               className={classes.imgStyle}
               width="100"
               height="100"
@@ -242,31 +249,31 @@ export default function Header() {
           <span className={classes.span}>Sad</span>
         </Box>
       </Box>
-
-      <Box
-        display="flex"
-        flexWrap="nowrap"
-        justifyContent="space-around"
-        className={classes.topHeader}
-      >
-        <Box
-          display="flex"
-          flexWrap="nowrap"
-          justifyContent="space-around"
-          className={classes.topHeader}
-        >
-          {meditation.map((item, idx) => {
-            return (
-              <Tools
-                key={idx}
-                mydata={item.mydata}
-                meditation={item.meditation}
-                whyMeditation={item.whyMeditation}
-                Mindfulness={item.Mindfulness}
-              />
-            );
-          })}
-        </Box>
+      {urlEndpoint === "HOME"
+        ? <Box
+            display="flex"
+            flexWrap="nowrap"
+            justifyContent="space-around"
+            className={classes.topHeader}
+          >
+            <Box
+              display="flex"
+              flexWrap="nowrap"
+              justifyContent="space-around"
+              className={classes.topHeader}
+            >
+              {meditation.map((item, idx) => {
+                return (
+                  <Tools
+                    key={idx}
+                    mydata={item.mydata}
+                    meditation={item.meditation}
+                    whyMeditation={item.whyMeditation}
+                    Mindfulness={item.Mindfulness}
+                  />
+                );
+              })}
+            </Box>
         <Box
           display="flex"
           flexWrap="nowrap"
@@ -304,7 +311,10 @@ export default function Header() {
             );
           })}
         </Box>
+        
       </Box>
+      : true
+    }
     </>
   );
 }
