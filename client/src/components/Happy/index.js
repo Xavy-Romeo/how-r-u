@@ -58,21 +58,18 @@ export default function Happy() {
                 Tools and Techniques to Keep you Moving!
               </Typography>
 
-              <Grid container spacing={8} justify="center">
-                <Grid item xs={12} sm={6}>
+              <Grid container spacing={4} justify="center">
+                <Grid item xs={12} sm={3}>
+                <h2>Meditation</h2>
+                  <Paper style={{ height: 75, width: "100%" }} >checking</Paper>
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                <h2>Activities</h2>
+                  <Paper style={{ height: 75, width: "100%"}} />
+                </Grid>
+                <Grid item xs={12} sm={3}>
+                <h2>Books</h2>
                   <Paper style={{ height: 75, width: "100%" }} />
-                  <h2>Meditation</h2>
-                </Grid>
-                <Grid item xl={12}>
-                  <Paper style={{ height: 75, width: 50 }} />
-                  <h2>Activities</h2>
-                </Grid>
-                <Grid item>
-                  <Paper style={{ height: 75, width: 50 }} />
-                </Grid>
-                <Grid item>
-                  <Paper style={{ height: 75, width: 50 }} />
-                  <h2>Books</h2>
                 </Grid>
               </Grid>
             </header>

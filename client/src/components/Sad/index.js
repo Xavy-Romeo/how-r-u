@@ -59,15 +59,15 @@ export default function Sad() {
               </Typography>
 
               <Grid container spacing={4} justify="center">
-                <Grid item xs={12} sm={5}>
+                <Grid item xs={12} sm={3}>
                 <h2>Meditation</h2>
                   <Paper style={{ height: 75, width: "100%" }} >checking</Paper>
                 </Grid>
-                <Grid item xl={12} sm={3}>
+                <Grid item xs={12} sm={3}>
                 <h2>Activities</h2>
                   <Paper style={{ height: 75, width: "100%"}} />
                 </Grid>
-                <Grid item xl={12} sm={3}>
+                <Grid item xs={12} sm={3}>
                 <h2>Books</h2>
                   <Paper style={{ height: 75, width: "100%" }} />
                 </Grid>

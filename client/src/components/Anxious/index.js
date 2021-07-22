@@ -39,7 +39,6 @@ export default function Anxious() {
   return (
     <div>
       {" "}
-    
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
           <div className="App">
