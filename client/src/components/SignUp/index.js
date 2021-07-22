@@ -28,7 +28,10 @@ export default function Signup({ classes, signupModal, setSignupModal, loginModa
 
             {signupModal && (
                 <div className="signup-modal">
-                    <div className="overlay"></div>
+                    <div 
+                        className="overlay"
+                        onClick={() => {setSignupModal(false)}}
+                    ></div>
                     <div className="signup-container">
                         <form className="signup-form"> 
                             <h3>Signup</h3>

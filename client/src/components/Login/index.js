@@ -1,11 +1,41 @@
 import React, { useState } from 'react';
 import Button from "@material-ui/core/Button";
+import { useMutation } from '@apollo/client';
 import './Login.css';
+
+import Auth from'../../utils/auth';
+import { LOGIN_USER } from '../../utils/mutations';
 
 export default function Login({ classes, loginModal, setLoginModal, signupModal }) {
     
-    const loginSubmit = event => event.preventDefault();
-    
+    const [userData, setUserData] = useState({ username: '', password: ' '});
+
+    const [login, { error }] = useMutation(LOGIN_USER);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserData({ ...userData, [name]: value });
+    };
+
+    // const loginSubmit = async (event) => {
+    //     event.preventDefault();
+              
+    //     try {
+    //         const { data } = await login({
+    //             variables: { ...userData } 
+    //         });
+    //         Auth.login(data.login.token);
+    //     }
+    //     catch (err) {
+    //         console.error(err);
+    //     }
+
+    //     setUserData({
+    //         username: '', 
+    //         password: ''
+    //     });
+    // };
+
     if (loginModal) {
         document.body.classList.add('modal-active');
     }
@@ -28,7 +58,10 @@ export default function Login({ classes, loginModal, setLoginModal, signupModal 
 
             {loginModal && (
                 <div className="login-modal">
-                    <div className="overlay"></div>
+                    <div 
+                        className="overlay" 
+                        onClick={() => {setLoginModal(false)}}
+                    ></div>
                     <div className="login-container">
                         <form className="login-form"> 
                             <h3>Login</h3>
@@ -42,7 +75,7 @@ export default function Login({ classes, loginModal, setLoginModal, signupModal 
                                 <button 
                                     type="submit" 
                                     onClick={() => {
-                                        loginSubmit()
+                                        // loginSubmit()
                                         setLoginModal(false)                                        
                                     }}
                                 >Login</button>   
