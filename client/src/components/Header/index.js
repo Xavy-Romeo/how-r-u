@@ -13,7 +13,8 @@ import happy from "../../assets/happy.jpg";
 import okay from "../../assets/okay.jpg";
 import anxious from "../../assets/anxious.jpg";
 import sad from "../../assets/sad.jpg";
-import { LOGIN_USER } from '../../utils/mutations'
+import { LOGIN_USER } from '../../utils/mutations';
+import Login from "../Login";
 
 
 const meditation = [
@@ -172,13 +173,9 @@ export default function Header() {
               </NavLink>
             </Box>
             <Box>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Login
-              </Button>
+              <Login 
+                classes={classes}
+              />
               <Button
                 variant="contained"
                 color="primary"
