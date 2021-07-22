@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useMutation } from "@apollo/client";
 import { NavLink, useLocation } from "react-router-dom";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
@@ -12,6 +13,7 @@ import happy from "../../assets/happy.jpg";
 import okay from "../../assets/okay.jpg";
 import anxious from "../../assets/anxious.jpg";
 import sad from "../../assets/sad.jpg";
+import { LOGIN_USER } from '../../utils/mutations'
 
 
 const meditation = [
