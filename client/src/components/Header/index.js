@@ -127,7 +127,9 @@ export default function Header() {
     setLocation(presentLocation.pathname)
     switch (presentLocation.pathname) {
       case '/':
-        setUrlEndpoint('HOME')
+        {urlEndpoint !== 'HOME' && (
+          setUrlEndpoint('HOME')
+        )}
         break;
       
       case '/happy':

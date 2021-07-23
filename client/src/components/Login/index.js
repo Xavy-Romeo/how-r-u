@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Button from "@material-ui/core/Button";
+import Button from "@material-ui/core/button";
 import { useMutation } from '@apollo/client';
 import './Login.css';
 
@@ -7,7 +7,7 @@ import Auth from'../../utils/auth';
 import { LOGIN_USER } from '../../utils/mutations';
 
 export default function Login({ classes, loginModal, setLoginModal, signupModal }) {
-    
+
     const [userData, setUserData] = useState({ username: '', password: ' '});
 
     const [login, { error }] = useMutation(LOGIN_USER);
@@ -17,24 +17,23 @@ export default function Login({ classes, loginModal, setLoginModal, signupModal 
         setUserData({ ...userData, [name]: value });
     };
 
-    // const loginSubmit = async (event) => {
-    //     event.preventDefault();
+    const loginSubmit = async () => {
               
-    //     try {
-    //         const { data } = await login({
-    //             variables: { ...userData } 
-    //         });
-    //         Auth.login(data.login.token);
-    //     }
-    //     catch (err) {
-    //         console.error(err);
-    //     }
+        try {
+            const { data } = await login({
+                variables: { ...userData } 
+            });
+            Auth.login(data.login.token);
+        }
+        catch (err) {
+            console.error(err);
+        }
 
-    //     setUserData({
-    //         username: '', 
-    //         password: ''
-    //     });
-    // };
+        setUserData({
+            username: '', 
+            password: ''
+        });
+    };
 
     if (loginModal) {
         document.body.classList.add('modal-active');
@@ -66,17 +65,30 @@ export default function Login({ classes, loginModal, setLoginModal, signupModal 
                         <form className="login-form"> 
                             <h3>Login</h3>
                             
-                            <label for="username">Username:</label>
-                            <input type="text" placeholder="Username" name="username" id="login-username"></input>
+                            <label htmlFor="username">Username:</label>
+                            <input
+                                onChange={handleInputChange} 
+                                type="text" 
+                                placeholder="Username" 
+                                name="username" 
+                                id="login-username"
+                            ></input>
 
-                            <label for="password">Password:</label>
-                            <input type="text" placeholder="Password" name="password" id="login-password"></input>
+                            <label htmlFor="password">Password:</label>
+                            <input
+                                onChange={handleInputChange} 
+                                type="text" 
+                                placeholder="Password" 
+                                name="password" 
+                                id="login-password"
+                            ></input>
+
                             <div className="button-div">
                                 <button 
-                                    type="submit" 
+                                    type="button" 
                                     onClick={() => {
-                                        // loginSubmit()
-                                        setLoginModal(false)                                        
+                                        loginSubmit()
+                                        setLoginModal(false)
                                     }}
                                 >Login</button>   
                             </div>
