@@ -72,6 +72,7 @@ export default function Login({ classes, loginModal, setLoginModal, signupModal 
                                 placeholder="Username" 
                                 name="username" 
                                 id="login-username"
+                                value={userData.username}
                             ></input>
 
                             <label htmlFor="password">Password:</label>
@@ -81,6 +82,7 @@ export default function Login({ classes, loginModal, setLoginModal, signupModal 
                                 placeholder="Password" 
                                 name="password" 
                                 id="login-password"
+                                value={userData.password}
                             ></input>
 
                             <div className="button-div">

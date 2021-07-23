@@ -25,7 +25,6 @@ export default function Signup({ classes, signupModal, setSignupModal, loginModa
               variables: { ...userData }
             })
             Auth.login(data.addUser.token);
-            console.log(data);
         }
         catch (err) {
             console.error(err);
