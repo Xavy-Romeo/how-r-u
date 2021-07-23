@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -15,6 +16,7 @@ import sad from "../../assets/sad.jpg";
 import Login from "../Login";
 import Signup from "../SignUp";
 import Auth from "../../utils/auth";
+import { GET_ME } from "../../utils/queries";
 
 const meditation = [
   {
@@ -122,6 +124,9 @@ export default function Header() {
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
 
+  const { data } = useQuery(GET_ME);
+  const userData = data?.me || [];
+
   useEffect(() => {
     setLocation(presentLocation.pathname)
     switch (presentLocation.pathname) {
@@ -149,12 +154,21 @@ export default function Header() {
       default:
         break;
     }
-  }, [presentLocation.pathname])
+  }, [presentLocation.pathname]);
+
   return (
     <>
     <AppBar style={{ backgroundColor: "#65AC8D", color: "blue", display: "flex", justifyContent: "space-between" }}>
         <Toolbar>
-        
+          {Auth.loggedIn() 
+            ? (
+              <Typography variant="h6" marginRight="15px">
+                Hi {userData.firstName}. 
+              </Typography>
+            )
+            : null
+          }
+
           <Typography variant="h6">
             How Are You Today?
           </Typography>
