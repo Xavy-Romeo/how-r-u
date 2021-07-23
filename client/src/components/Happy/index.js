@@ -1,5 +1,6 @@
 import React from "react";
 import "../../App.css";
+import Auth from '../../utils/auth';
 
 import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
@@ -34,7 +35,7 @@ const theme = createMuiTheme({
   },
 });
 
-export default function Happy() {
+export default function Happy({ classes }) {
   return (
     <div>
       {" "}
@@ -47,7 +48,21 @@ export default function Happy() {
                 <Toolbar>
                   <Typography variant="h6">How Are You Today?</Typography>
                     <NavLink to="/">
-                      <Button>Home</Button>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        className={classes}
+                      >
+                        Home
+                      </Button>
+                      <Button
+                        onClick={() => {Auth.logout()}}
+                        variant="contained"
+                        color="primary"
+                        className={classes}
+                      >
+                        Logout
+                      </Button>
                     </NavLink>
                 </Toolbar>
               </AppBar>

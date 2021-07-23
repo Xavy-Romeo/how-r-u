@@ -1,5 +1,6 @@
 import React from "react";
 import "../../App.css";
+import Auth from '../../utils/auth';
 
 import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
@@ -35,7 +36,7 @@ const theme = createMuiTheme({
   },
 });
 
-export default function Anxious() {
+export default function Anxious({ classes }) {
   return (
     <div>
       {" "}
@@ -47,7 +48,21 @@ export default function Anxious() {
                 <Toolbar>
                   <Typography variant="h6">How Are You Today?</Typography>
                   <NavLink to="/">
-                    <Button>Home</Button>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      className={classes}
+                    >
+                      Home
+                    </Button>
+                    <Button
+                      onClick={() => {Auth.logout()}}
+                      variant="contained"
+                      color="primary"
+                      className={classes}
+                    >
+                      Logout
+                    </Button>
                   </NavLink>
                 </Toolbar>
               </AppBar>
