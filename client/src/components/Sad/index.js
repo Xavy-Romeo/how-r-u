@@ -42,7 +42,7 @@ export default function Sad() {
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
           <div className="App">
-            <header className="App-header">
+            <header className="sadDiv">
               <AppBar color="secondary">
                 <Toolbar>
                   <Typography variant="h6">How Are You Today?</Typography>
