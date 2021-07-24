@@ -43,7 +43,7 @@ export default function Anxious({ classes }) {
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
           <div className="App">
-            <header className="App-header">
+            <header className="anxiousDiv">
               <AppBar color="secondary">
                 <Toolbar>
                   <Typography variant="h6">How Are You Today?</Typography>

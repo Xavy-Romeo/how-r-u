@@ -12,9 +12,49 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.happyDiv{
+  background-color:yellow;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgba(247, 143, 7, 0.658);
+}
+.anxiousDiv{
+  background-color:rgba(228, 28, 28, 0.678);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgba(255, 255, 255, 0.767);
+}
 
+.okayDiv{
+  background-color:rgba(134, 223, 32, 0.705);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgba(255, 255, 255, 0.767);
+}
+.sadDiv{
+  background-color:rgba(71, 6, 26, 0.671);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgba(255, 255, 255, 0.767);
+}
 .App-header {
-  background-color: #282c34;
+  background-color: red;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
