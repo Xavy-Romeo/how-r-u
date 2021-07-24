@@ -1,10 +1,43 @@
 import React, { useState } from 'react';
-import Button from "@material-ui/core/Button";
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations';
+import Button from "@material-ui/core/button";
+import Auth from '../../utils/auth';
 import './Signup.css';
+
 
 export default function Signup({ classes, signupModal, setSignupModal, loginModal }) {
     
-    const signupSubmit = event => event.preventDefault();
+    const [userData, setUserData] = useState({
+       firstName: '', lastName: '', email: '', username: '', password: '' 
+    });
+
+    const [addUser, { error }] = useMutation(ADD_USER);
+
+    const handleInputChange = (event) => {
+        const { name, value } = event.target;
+        setUserData({ ...userData, [name]: value });
+    };
+
+    const signupSubmit = async () => {
+        try {
+            const { data } = await addUser({
+              variables: { ...userData }
+            })
+            Auth.login(data.addUser.token);
+        }
+        catch (err) {
+            console.error(err);
+        }
+
+        setUserData({
+            firstName: '', 
+            lastName: '', 
+            email: '', 
+            username: '', 
+            password: ''
+        });
+    };
 
     if (signupModal) {
         document.body.classList.add('modal-active');
@@ -38,27 +71,63 @@ export default function Signup({ classes, signupModal, setSignupModal, loginModa
 
                             <div className="signup-names">
                                 <div>
-                                    <label for="firstName">First Name:</label>
-                                    <input type="text" placeholder="First Name" name="firstName" id="signup-first-name"></input>
+                                    <label htmlFor="firstName">First Name:</label>
+                                    <input
+                                        onChange={handleInputChange} 
+                                        type="text" 
+                                        placeholder="First Name" 
+                                        name="firstName" 
+                                        id="signup-first-name"
+                                        value={userData.firstName}
+                                    ></input>
                                 </div>    
                                 
                                 <div className="signup-last">
-                                    <label for="lastName">Last Name:</label>
-                                    <input type="text" placeholder="Last Name" name="lastName" id="signup-last-name"></input>
+                                    <label htmlFor="lastName">Last Name:</label>
+                                    <input
+                                        onChange={handleInputChange} 
+                                        type="text" 
+                                        placeholder="Last Name" 
+                                        name="lastName" 
+                                        id="signup-last-name"
+                                        value={userData.lastName}
+                                    ></input>
                                 </div>
                             </div>
 
-                            <label for="email">Email:</label>
-                            <input type="text" placeholder="Email" name="email" id="signup-email"></input>
+                            <label htmlFor="email">Email:</label>
+                            <input 
+                                onChange={handleInputChange}
+                                type="text" 
+                                placeholder="Email" 
+                                name="email" 
+                                id="signup-email"
+                                value={userData.email}
+                            ></input>
                             
-                            <label for="username">Username:</label>
-                            <input type="text" placeholder="Username" name="username" id="signup-username"></input>
+                            <label htmlFor="username">Username:</label>
+                            <input
+                                onChange={handleInputChange} 
+                                type="text" 
+                                placeholder="Username" 
+                                name="username" 
+                                id="signup-username"
+                                value={userData.username}
+                            ></input>
 
-                            <label for="password">Password:</label>
-                            <input type="text" placeholder="Password" name="password" id="signup-password"></input>
+                            <label htmlFor="password">Password:</label>
+                            <input
+                                onChange={handleInputChange} 
+                                type="text" 
+                                placeholder="Password" 
+                                name="password" 
+                                id="signup-password"
+                                value={userData.password}
+                            ></input>
+                            
                             <div className="button-div">
                                 <button 
-                                    type="submit" 
+                                    type="button" 
                                     onClick={() => {
                                         signupSubmit()
                                         setSignupModal(false)                                        

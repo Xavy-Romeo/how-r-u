@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useMutation } from "@apollo/client";
 import { NavLink, useLocation } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -13,9 +13,10 @@ import happy from "../../assets/happy.jpg";
 import okay from "../../assets/okay.jpg";
 import anxious from "../../assets/anxious.jpg";
 import sad from "../../assets/sad.jpg";
-import { LOGIN_USER } from '../../utils/mutations';
 import Login from "../Login";
 import Signup from "../SignUp";
+import Auth from "../../utils/auth";
+import { GET_ME } from "../../utils/queries";
 
 const meditation = [
   {
@@ -123,11 +124,16 @@ export default function Header() {
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
 
+  const { data } = useQuery(GET_ME);
+  const userData = data?.me || [];
+
   useEffect(() => {
     setLocation(presentLocation.pathname)
     switch (presentLocation.pathname) {
       case '/':
-        setUrlEndpoint('HOME')
+        {urlEndpoint !== 'HOME' && (
+          setUrlEndpoint('HOME')
+        )}
         break;
       
       case '/happy':
@@ -148,12 +154,21 @@ export default function Header() {
       default:
         break;
     }
-  }, [presentLocation.pathname])
+  }, [presentLocation.pathname]);
+
   return (
     <>
     <AppBar style={{ backgroundColor: "#65AC8D", color: "blue", display: "flex", justifyContent: "space-between" }}>
         <Toolbar>
-        
+          {Auth.loggedIn() 
+            ? (
+              <Typography variant="h6" marginRight="15px">
+                Hi {userData.firstName}. 
+              </Typography>
+            )
+            : null
+          }
+
           <Typography variant="h6">
             How Are You Today?
           </Typography>
@@ -166,18 +181,34 @@ export default function Header() {
               </Button>
             )}
 
-            <Login 
-              classes={classes}
-              loginModal={loginModal}
-              setLoginModal={setLoginModal}
-              signupModal={signupModal}
-            />
-            <Signup
-              classes={classes}
-              signupModal={signupModal}
-              setSignupModal={setSignupModal}
-              loginModal={loginModal}
-            />
+            {Auth.loggedIn() 
+              ? (
+                <Button
+                    onClick={() => {Auth.logout()}}
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                >
+                    Logout
+                </Button>
+              )
+              : (
+                <>
+                  <Login 
+                    classes={classes}
+                    loginModal={loginModal}
+                    setLoginModal={setLoginModal}
+                    signupModal={signupModal}
+                  />
+                  <Signup
+                    classes={classes}
+                    signupModal={signupModal}
+                    setSignupModal={setSignupModal}
+                    loginModal={loginModal}
+                  />
+                </>
+              )
+            }  
           </Box>
         </Toolbar>
         
@@ -232,7 +263,10 @@ export default function Header() {
           <span className={classes.span}>Okay</span>
         </Box>
         <Box>
-          <NavLink to="/anxious">
+          <NavLink 
+            to="/anxious"
+            classes={classes.button}
+          >
             {" "}
             <img
               className={classes.imgStyle}
