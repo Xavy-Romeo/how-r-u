@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../App.css";
 import Auth from '../../utils/auth';
+import Books from '../Books';
+import { searchGoogleBooks } from '../../utils/Api';
+import comingSoon from '../../assets/ComingSoon.png'; 
 
-import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
 
 import {
@@ -12,12 +14,18 @@ import {
 } from "@material-ui/core/styles";
 import { green, orange } from "@material-ui/core/colors";
 
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+import {
+  Button,
+  Typography,
+  Container,
+  Paper,
+  Grid,
+  AppBar,
+  Toolbar,
+  Card,
+  CardMedia,
+  CardContent 
+} from "@material-ui/core";
 
 const theme = createMuiTheme({
   typography: {
@@ -37,6 +45,38 @@ const theme = createMuiTheme({
 });
 
 export default function Okay({ classes }) {
+
+  const mood = 'Okay';
+
+  const [bookSearchComplete, setBookSearchComplete] = useState(false);
+  const [bookData, setBookData] = useState([{}]);
+
+  const bookResults = async () => {
+    try {
+        const bookSearch = await searchGoogleBooks(mood);
+
+        const { items } = await bookSearch.json();
+        console.log('items0', items[0])
+        const bookArr = [items[0], items[1], items[2]];
+
+        const bookInfo = await bookArr.map((book) => ({
+          authors: book.volumeInfo.authors || ['No author displayed'],
+          title: book.volumeInfo.title,
+          description: book.volumeInfo.description,
+          image: book.volumeInfo.imageLinks?.thumbnail || '',
+          link: book.volumeInfo.previewLink || ''
+      }));
+
+          setBookSearchComplete(true);
+          setBookData(bookInfo);
+    }
+    catch (err) {
+        console.log(err);
+    }
+  };
+
+  bookResults();
+
   return (
     <div>
       {" "}
@@ -73,18 +113,131 @@ export default function Okay({ classes }) {
                 Tools and Techniques to help Keep you Balanced!
               </Typography>
 
-              <Grid container spacing={4} justify="center">
-                <Grid item xs={12} sm={3}>
-                <h2>Meditation</h2>
-                  <Paper style={{ height: 75, width: "100%" }} >checking</Paper>
-                </Grid>
-                <Grid item xs={12} sm={3}>
-                <h2>Activities</h2>
-                  <Paper style={{ height: 75, width: "100%"}} />
-                </Grid>
-                <Grid item xs={12} sm={3}>
+              <Grid container spacing={2} justify="center">
+                <Grid item xs={12} sm={4} m={3}>
+                  <h2>Meditation</h2>
+                    <Paper 
+                      style={{ height: 800, width: "100%" }}
+                    >
+                      <Card>
+                        <CardMedia
+                          style={{ height: 150, width: "100%" }}
+                          image={comingSoon}
+                          title='Coming Soon'
+                        >
+
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                            Feature Coming Soon
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardMedia
+                          style={{ height: 150, width: "100%" }}
+                          image={comingSoon}
+                          title='Coming Soon'
+                        >
+
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                            Feature Coming Soon
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardMedia
+                          style={{ height: 150, width: "100%" }}
+                          image={comingSoon}
+                          title='Coming Soon'
+                        >
+
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                            Feature Coming Soon
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Paper>
+                  </Grid>
+                  <Grid item xs={12} sm={4} m={3}>
+                  <h2>Activities</h2>
+                  <Paper 
+                      style={{ height: 800, width: "100%" }}
+                    >
+                      <Card>
+                        <CardMedia
+                          style={{ height: 150, width: "100%" }}
+                          image={comingSoon}
+                          title='Coming Soon'
+                        >
+
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                            Feature Coming Soon
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardMedia
+                          style={{ height: 150, width: "100%" }}
+                          image={comingSoon}
+                          title='Coming Soon'
+                        >
+
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                            Feature Coming Soon
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardMedia
+                          style={{ height: 150, width: "100%" }}
+                          image={comingSoon}
+                          title='Coming Soon'
+                        >
+
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                            Feature Coming Soon
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                    </Paper>
+                  </Grid>
+                <Grid item xs={12} sm={4} m={3}>
                 <h2>Books</h2>
-                  <Paper style={{ height: 75, width: "100%" }} />
+                  <Paper 
+                    style={{ height: 2000, width: "100%" }} 
+                  >
+                    {!bookSearchComplete 
+                      ? ( <> 
+                            <Typography>
+                              Loading...
+                            </Typography>
+                            <Typography>
+                              Loading...
+                            </Typography>
+                            <Typography>
+                              Loading....
+                            </Typography>
+                          </>
+                        )
+                      : (
+                          <Books
+                            bookData={bookData}
+                          ></Books>
+                        )
+                    }
+                    
+                  </Paper>
                 </Grid>
               </Grid>
             </header>

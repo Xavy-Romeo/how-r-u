@@ -3,9 +3,8 @@ import "../../App.css";
 import Auth from '../../utils/auth';
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
-import comingSoon from '../../assets/ComingSoon.png' 
+import comingSoon from '../../assets/ComingSoon.png'; 
 
-import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
 
 import {
@@ -16,6 +15,7 @@ import {
 import { green, orange } from "@material-ui/core/colors";
 
 import {
+  Button,
   Typography,
   Container,
   Paper,
@@ -68,18 +68,7 @@ export default function Happy({ classes }) {
           link: book.volumeInfo.previewLink || ''
       }));
 
-      console.log('bookInfo', bookInfo);
-
-        // const bookInfo = await items.map((book) => ({
-        //     authors: book.volumeInfo.authors || ['No author displayed'],
-        //     title: book.volumeInfo.title,
-        //     description: book.volumeInfo.description,
-        //     image: book.volumeInfo.imageLinks?.thumbnail || '',
-        //     link: book.volumeInfo.previewLink || ''
-        // }));
-
           setBookSearchComplete(true);
-          // setBookData([bookInfo[0], bookInfo[1], bookInfo[2]]);
           setBookData(bookInfo);
     }
     catch (err) {
@@ -126,7 +115,7 @@ export default function Happy({ classes }) {
                 Tools and Techniques to Keep you Moving!
               </Typography>
 
-              <Grid container spacing={1} justify="center">
+              <Grid container spacing={2} justify="center">
                 <Grid item xs={12} sm={4} m={3}>
                 <h2>Meditation</h2>
                   <Paper 
@@ -246,7 +235,6 @@ export default function Happy({ classes }) {
                       : (
                           <Books
                             bookData={bookData}
-                            mood={mood}
                           ></Books>
                         )
                     }

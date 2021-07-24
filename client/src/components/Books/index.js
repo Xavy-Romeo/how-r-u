@@ -20,7 +20,7 @@ const useStyles = makeStyles({
     },
 });
 
-export default function BookCards({ mood, bookData }) {
+export default function BookCards({ bookData }) {
     const classes = useStyles();
 
     return (
@@ -30,7 +30,6 @@ export default function BookCards({ mood, bookData }) {
                 <CardMedia
                     className={classes.media}
                     image={bookData[0].image}
-                    // image={book1.image}
                     title='Book image'
                 >             
                 </CardMedia>
@@ -38,9 +37,9 @@ export default function BookCards({ mood, bookData }) {
                 <CardContent>
                     <Typography component='p'>
                         Title: {bookData[0].title}
+                    </Typography>
+                    <Typography component='p'>
                         Author: {bookData[0].authors}
-                        {/* Title: {book1.title}
-                        Author: {book1.authors} */}
                     </Typography>
                 </CardContent>
 
@@ -48,7 +47,6 @@ export default function BookCards({ mood, bookData }) {
                     <Button>
                         <Link
                             href={bookData[0].link}
-                            // href={book1.link}
                             target='_blank'
                             width='100%'
                             height='100%'
@@ -60,7 +58,7 @@ export default function BookCards({ mood, bookData }) {
         
             </Card>
           
-            <Card>
+            {/* <Card>
                 
                 <CardMedia
                     className={classes.media}
@@ -72,6 +70,8 @@ export default function BookCards({ mood, bookData }) {
                 <CardContent>
                     <Typography component='p'>
                         Title: {bookData[1].title}
+                    </Typography>
+                    <Typography component='p'>    
                         Author: {bookData[1].authors}
                     </Typography>
                 </CardContent>
@@ -103,6 +103,8 @@ export default function BookCards({ mood, bookData }) {
                         <CardContent>
                             <Typography component='p'>
                                 Title: {bookData[2].title}
+                            </Typography>
+                            <Typography component='p'>    
                                 Author: {bookData[2].authors}
                             </Typography>
                         </CardContent>
@@ -120,7 +122,7 @@ export default function BookCards({ mood, bookData }) {
                             </Button>
                         </CardActions>
                 
-                    </Card>
+                    </Card> */}
 
 
 
