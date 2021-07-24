@@ -14,8 +14,27 @@ import Anxious from "./components/Anxious";
 import Sad from "./components/Sad";
 import Home from "./components/Home";
 
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
 
@@ -49,10 +68,11 @@ function App() {
   // const [contactSelected, setContactSelected] = useState(false);
 
   return (
-    <div>
+    <ApolloProvider client={client}>
         <Router>
         <div>
         <Header 
+
           // currentMood={currentMood}
           // setCurrentMood={setCurrentMood}
         />
@@ -119,8 +139,7 @@ function App() {
           </Switch>
         </div>
       </Router>
-   
-    </div>
+    </ApolloProvider>
   );
 }
 

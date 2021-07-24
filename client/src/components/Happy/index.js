@@ -21,8 +21,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 const theme = createMuiTheme({
   typography: {
     h2: {
-      fontSize: 50, 
-      fontWeight:"bold"
+      fontSize: 24,
     },
   },
   palette: {
@@ -77,6 +76,7 @@ export default function Happy() {
           </div>
         </Container>
       </ThemeProvider>
+      )
     </div>
   );
 }
