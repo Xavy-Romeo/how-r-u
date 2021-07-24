@@ -1,6 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../App.css";
 import Auth from '../../utils/auth';
+import Books from '../Books';
+import { searchGoogleBooks } from '../../utils/Api';
+import { bookResults } from '../../utils/Api';
 
 import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
@@ -35,7 +38,48 @@ const theme = createMuiTheme({
   },
 });
 
+
+
+
+
+
+///////////////// WRITE CODE IN UTILS AND IMPORT IT!!!!!!!/////
+
+
+
 export default function Happy({ classes }) {
+  const mood = 'Happy';
+
+  const [bookSearchComplete, setBookSearchComplete] = useState(false);
+  const [bookData, setBookData] = useState([{}]);
+
+  const bookResults = async () => {
+    try {
+        const bookSearch = await searchGoogleBooks(mood);
+
+        const { items } = await bookSearch.json();
+
+       
+        // const books = [items[0].volumeInfo, items[1].volumeInfo, items[2].volumeInfo];
+
+        const bookInfo = await items.map((book) => ({
+            authors: book.volumeInfo.authors || ['No author displayed'],
+            title: book.volumeInfo.title,
+            description: book.volumeInfo.description,
+            image: book.volumeInfo.imageLinks?.thumbnail || '',
+            link: book.volumeInfo.previewLink || ''
+        }));
+
+          setBookSearchComplete(true);
+          setBookData([bookInfo[0], bookInfo[1], bookInfo[2]]);
+    }
+    catch (err) {
+        console.log(err);
+    }
+  };
+
+  bookResults();
+
   return (
     <div>
       {" "}
@@ -76,7 +120,9 @@ export default function Happy({ classes }) {
               <Grid container spacing={4} justify="center">
                 <Grid item xs={12} sm={3}>
                 <h2>Meditation</h2>
-                  <Paper style={{ height: 75, width: "100%" }} >checking</Paper>
+                  <Paper 
+                    style={{ height: 75, width: "100%" }}
+                  >checking</Paper>
                 </Grid>
                 <Grid item xs={12} sm={3}>
                 <h2>Activities</h2>
@@ -84,7 +130,26 @@ export default function Happy({ classes }) {
                 </Grid>
                 <Grid item xs={12} sm={3}>
                 <h2>Books</h2>
-                  <Paper style={{ height: 75, width: "100%" }} />
+                  <Paper 
+                    style={{ height: 75, width: "100%" }} 
+                  >
+                    {!bookSearchComplete 
+                      ? (  
+                          <Typography>
+                            Loading...
+                            Loading...
+                            Loading....
+                          </Typography>
+                        )
+                      : (
+                          <Books
+                            bookData={bookData}
+                            mood={mood}
+                          ></Books>
+                        )
+                    }
+                    
+                  </Paper>
                 </Grid>
               </Grid>
             </header>
