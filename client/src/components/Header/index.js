@@ -109,6 +109,9 @@ const useStyles = makeStyles({
   button: {
     marginRight: "1rem",
   },
+  media: {
+    height: 500,
+  }
 });
 
 export default function Header() {
@@ -239,7 +242,6 @@ export default function Header() {
         <Box>
           <NavLink to="/happy">
             <img
-              // onClick={() => {setCurrentMood("Happy")}}
               className={classes.imgStyle}
               width="100"
               height="100"

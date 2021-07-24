@@ -12,7 +12,6 @@ import Happy from "./components/Happy";
 import Okay from "./components/Okay";
 import Anxious from "./components/Anxious";
 import Sad from "./components/Sad";
-import Home from "./components/Home";
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
@@ -37,17 +36,6 @@ const client = new ApolloClient({
 });
 
 function App() {
-
-  // mood sections array
-  // const [moodSection] = useState([
-  //   {name: 'Happy'},
-  //   {name: 'Okay'},
-  //   {name: 'Anxious'},
-  //   {name: 'Sad'}
-  // ]);
-
-  // useState hook to set current mood section
-  // const [currentMood, setCurrentMood] = useState(moodSection[0]);
   
   // const [categories] = useState([
   //   {
@@ -71,11 +59,7 @@ function App() {
     <ApolloProvider client={client}>
         <Router>
         <div>
-        <Header 
-
-          // currentMood={currentMood}
-          // setCurrentMood={setCurrentMood}
-        />
+        <Header/>
 
         {/* categories={categories}
         setCurrentCategory={setCurrentCategory}
@@ -118,11 +102,7 @@ function App() {
               </div>
             </div> */}
             <Route path="/happy">
-             
-             <Happy 
-                // currentMood={currentMood}
-                // setCurrentMood={setCurrentMood}
-             />
+              <Happy/>
             </Route>
             <Route path="/okay">
               <Okay />
@@ -132,9 +112,6 @@ function App() {
             </Route>
             <Route path="/sad">
               <Sad />
-            </Route>
-            <Route path="/">
-              <Home />
             </Route>
           </Switch>
         </div>
