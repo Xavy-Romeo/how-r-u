@@ -3,7 +3,12 @@ import "../../App.css";
 import Auth from '../../utils/auth';
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
-import comingSoon from '../../assets/ComingSoon.png'; 
+import handMeditate from '../../assets/Images/meditation-1794292_1280.jpg';
+import meditate from '../../assets/Images/sunset-691848_1280.jpg';
+import selfLove from '../../assets/Images/self-love-3969679_1280.jpg';
+import beachStretch from '../../assets/Images/beach-1835213_1920.jpg';
+import run from '../../assets/Images/run-1749410_1920.jpg';
+import taiChi from '../../assets/Images/kevin-olson-QXkoms0AnIo.jpg';
 
 import { NavLink } from "react-router-dom";
 
@@ -121,42 +126,42 @@ export default function Anxious({ classes }) {
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={handMeditate}
+                          title='hands in lap'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="400" height="315" src="https://www.youtube.com/embed/O-6f5wQXSu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={meditate}
+                          title='sunset meditation'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="550" height="315" src="https://www.youtube.com/embed/JLJqUipWRWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={selfLove}
+                          title='self love'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="550" height="315" src="https://www.youtube.com/embed/itZMM5gCboo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
@@ -170,42 +175,42 @@ export default function Anxious({ classes }) {
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={beachStretch}
+                          title='sunset yoga stretch'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="550" height="315" src="https://www.youtube.com/embed/HlgmHxVXw7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={run}
+                          title='runner'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="550" height="315" src="https://www.youtube.com/embed/oSQrlzzuTa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={taiChi}
+                          title='tai chi couple'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="550" height="315" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>

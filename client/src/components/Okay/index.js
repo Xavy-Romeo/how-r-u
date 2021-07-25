@@ -3,8 +3,13 @@ import "../../App.css";
 import Auth from '../../utils/auth';
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
-import comingSoon from '../../assets/ComingSoon.png'; 
 
+import girlBook from '../../assets/Images/girl-2604837_1920.jpg';
+import womanStretch from '../../assets/Images/people-2573216_1280.jpg';
+import violin from '../../assets/Images/violin-374096_1280.jpg';
+import run from '../../assets/Images/run-1749410_1920.jpg';
+import meditate from '../../assets/Images/sunset-691848_1280.jpg';
+import bicycle from '../../assets/Images/bicycle-384566_1920.jpg';
 import { NavLink } from "react-router-dom";
 
 import {
@@ -122,42 +127,41 @@ export default function Okay({ classes }) {
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={girlBook}
+                          title='woman reading a book'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/xkEKJV1FSiw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardMedia
+                         style={{ height: 150, width: "100%" }}
+                         image={meditate}
+                         title='sunset meditation'
+                                                >
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/86m4RC_ADEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={violin}
+                          title='violin'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardMedia
-                          style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
-                        >
-
-                        </CardMedia>
-                        <CardContent>
-                          <Typography>
-                            Feature Coming Soon
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/xB3G5-eA7hI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
@@ -171,42 +175,43 @@ export default function Okay({ classes }) {
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={run}
+                          title='runner'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="550" height="315" src="https://www.youtube.com/embed/oSQrlzzuTa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                          </Typography>
+                          
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardMedia
+                          style={{ height: 150, width: "100%" }}
+                          image={womanStretch}
+                          title='woman in a yoga stretch'
+                        >
+
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/BPK9WNtpBgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={bicycle}
+                          title='cyclist'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardMedia
-                          style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
-                        >
-
-                        </CardMedia>
-                        <CardContent>
-                          <Typography>
-                            Feature Coming Soon
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/YCZssRQgddk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
