@@ -12,7 +12,7 @@ import Happy from "./components/Happy";
 import Okay from "./components/Okay";
 import Anxious from "./components/Anxious";
 import Sad from "./components/Sad";
-import Home from "./components/Home";
+
 
 
 
@@ -113,9 +113,7 @@ function App() {
             <Route path="/sad">
               <Sad />
             </Route>
-            <Route path="/">
-              <Home />
-            </Route>
+          
           </Switch>
         </div>
       </Router>
