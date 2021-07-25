@@ -4,6 +4,12 @@ import Auth from '../../utils/auth';
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
 import comingSoon from '../../assets/ComingSoon.png';
+import sad from '../../assets/Images/sad-505857_1280.jpg';
+import handMeditate from '../../assets/Images/meditation-1794292_1280.jpg';
+import headphones from '../../assets/Images/girl-791686_1280.jpg';
+import taiChi from '../../assets/Images/kevin-olson-QXkoms0AnIo.jpg';
+import boxing from '../../assets/Images/girl-3253532_1280.jpg';
+import hike from '../../assets/Images/adventure-1850178_1280.jpg';
 
 import { NavLink } from "react-router-dom";
 
@@ -122,42 +128,42 @@ export default function Sad({ classes }) {
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={sad}
+                          title='sad bw'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/86m4RC_ADEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={handMeditate}
+                          title='hands in lap'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/bgs1rqr9UXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={headphones}
+                          title='woman wearing headphones'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/5rjtp2QLphE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
@@ -171,42 +177,42 @@ export default function Sad({ classes }) {
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={taiChi}
+                          title='tai chi couple'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
+                          <iframe width="550" height="315" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                             </Typography>
+                        </CardContent>
+                      </Card>
+                      <Card>
+                        <CardMedia
+                          style={{ height: 150, width: "100%" }}
+                          image={boxing}
+                          title='woman boxer'
+                        >
+
+                        </CardMedia>
+                        <CardContent>
+                          <Typography>
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/PoOi81Wwf3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>
                       <Card>
                         <CardMedia
                           style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
+                          image={hike}
+                          title='hiker on mountain'
                         >
 
                         </CardMedia>
                         <CardContent>
                           <Typography>
-                            Feature Coming Soon
-                          </Typography>
-                        </CardContent>
-                      </Card>
-                      <Card>
-                        <CardMedia
-                          style={{ height: 150, width: "100%" }}
-                          image={comingSoon}
-                          title='Coming Soon'
-                        >
-
-                        </CardMedia>
-                        <CardContent>
-                          <Typography>
-                            Feature Coming Soon
+                          <iframe width="560" height="315" src="https://www.youtube.com/embed/ttr2ANenbOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                           </Typography>
                         </CardContent>
                       </Card>

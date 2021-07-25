@@ -3,7 +3,7 @@ import "../../App.css";
 import Auth from '../../utils/auth';
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
-import comingSoon from '../../assets/ComingSoon.png'; 
+
 import meditationPeace from '../../assets/Images/buddhism-2214532_1280.jpg';
 import stones from '../../assets/Images/stones-2040340_1920.jpg';
 import happyCouple from '../../assets/Images/couple-1030744_1280.jpg';
