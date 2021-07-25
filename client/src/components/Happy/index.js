@@ -44,8 +44,6 @@ const theme = createMuiTheme({
  
 });
 
-///////////////// WRITE CODE IN UTILS AND IMPORT IT!!!!!!!/////
-
 export default function Happy({ classes }) {
   const mood = 'Happy';
 
