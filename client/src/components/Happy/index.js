@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import "../../App.css";
+import Auth from '../../utils/auth';
+import Books from '../Books';
+import { searchGoogleBooks } from '../../utils/Api';
+import comingSoon from '../../assets/ComingSoon.png'; 
 
-import Button from "@material-ui/core/Button";
 import { NavLink } from "react-router-dom";
 
 import {
@@ -11,18 +14,23 @@ import {
 } from "@material-ui/core/styles";
 import { green, orange } from "@material-ui/core/colors";
 
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
+import {
+  Button,
+  Typography,
+  Container,
+  Paper,
+  Grid,
+  AppBar,
+  Toolbar,
+  Card,
+  CardMedia,
+  CardContent 
+} from "@material-ui/core";
 
 const theme = createMuiTheme({
   typography: {
     h2: {
-      fontSize: 50, 
-      fontWeight:"bold"
+      fontSize: 24,
     },
   },
   palette: {
@@ -33,9 +41,43 @@ const theme = createMuiTheme({
       main: orange[400],
     },
   },
+ 
 });
 
-export default function Happy() {
+///////////////// WRITE CODE IN UTILS AND IMPORT IT!!!!!!!/////
+
+export default function Happy({ classes }) {
+  const mood = 'Happy';
+
+  const [bookSearchComplete, setBookSearchComplete] = useState(false);
+  const [bookData, setBookData] = useState([{}]);
+
+  const bookResults = async () => {
+    try {
+        const bookSearch = await searchGoogleBooks(mood);
+
+        const { items } = await bookSearch.json();
+        console.log('items0', items[0])
+        const bookArr = [items[0], items[1], items[2]];
+
+        const bookInfo = await bookArr.map((book) => ({
+          authors: book.volumeInfo.authors || ['No author displayed'],
+          title: book.volumeInfo.title,
+          description: book.volumeInfo.description,
+          image: book.volumeInfo.imageLinks?.thumbnail || '',
+          link: book.volumeInfo.previewLink || ''
+      }));
+
+          setBookSearchComplete(true);
+          setBookData(bookInfo);
+    }
+    catch (err) {
+        console.log(err);
+    }
+  };
+
+  bookResults();
+
   return (
     <div>
       {" "}
@@ -43,12 +85,26 @@ export default function Happy() {
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
           <div className="App">
-            <header className="App-header">
+            <header className="happyDiv">
               <AppBar color="secondary">
                 <Toolbar>
                   <Typography variant="h6">How Are You Today?</Typography>
                     <NavLink to="/">
-                      <Button>Home</Button>
+                      <Button
+                        variant="contained"
+                        color="primary"
+                        className={classes}
+                      >
+                        Home
+                      </Button>
+                      <Button
+                        onClick={() => {Auth.logout()}}
+                        variant="contained"
+                        color="primary"
+                        className={classes}
+                      >
+                        Logout
+                      </Button>
                     </NavLink>
                 </Toolbar>
               </AppBar>
@@ -59,24 +115,138 @@ export default function Happy() {
                 Tools and Techniques to Keep you Moving!
               </Typography>
 
-              <Grid container spacing={4} justify="center">
-                <Grid item xs={12} sm={3}>
+              <Grid container spacing={2} justify="center">
+                <Grid item xs={12} sm={4} m={3}>
                 <h2>Meditation</h2>
-                  <Paper style={{ height: 75, width: "100%" }} >checking</Paper>
+                  <Paper 
+                    style={{ height: 800, width: "100%" }}
+                  >
+                    <Card>
+                      <CardMedia
+                        style={{ height: 150, width: "100%" }}
+                        image={comingSoon}
+                        title='Coming Soon'
+                      >
+
+                      </CardMedia>
+                      <CardContent>
+                        <Typography>
+                          Feature Coming Soon
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    <Card>
+                      <CardMedia
+                        style={{ height: 150, width: "100%" }}
+                        image={comingSoon}
+                        title='Coming Soon'
+                      >
+
+                      </CardMedia>
+                      <CardContent>
+                        <Typography>
+                          Feature Coming Soon
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    <Card>
+                      <CardMedia
+                        style={{ height: 150, width: "100%" }}
+                        image={comingSoon}
+                        title='Coming Soon'
+                      >
+
+                      </CardMedia>
+                      <CardContent>
+                        <Typography>
+                          Feature Coming Soon
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Paper>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={4} m={3}>
                 <h2>Activities</h2>
-                  <Paper style={{ height: 75, width: "100%"}} />
+                <Paper 
+                    style={{ height: 800, width: "100%" }}
+                  >
+                    <Card>
+                      <CardMedia
+                        style={{ height: 150, width: "100%" }}
+                        image={comingSoon}
+                        title='Coming Soon'
+                      >
+
+                      </CardMedia>
+                      <CardContent>
+                        <Typography>
+                          Feature Coming Soon
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    <Card>
+                      <CardMedia
+                        style={{ height: 150, width: "100%" }}
+                        image={comingSoon}
+                        title='Coming Soon'
+                      >
+
+                      </CardMedia>
+                      <CardContent>
+                        <Typography>
+                          Feature Coming Soon
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                    <Card>
+                      <CardMedia
+                        style={{ height: 150, width: "100%" }}
+                        image={comingSoon}
+                        title='Coming Soon'
+                      >
+
+                      </CardMedia>
+                      <CardContent>
+                        <Typography>
+                          Feature Coming Soon
+                        </Typography>
+                      </CardContent>
+                    </Card>
+                  </Paper>
                 </Grid>
-                <Grid item xs={12} sm={3}>
+                <Grid item xs={12} sm={4} m={3}>
                 <h2>Books</h2>
-                  <Paper style={{ height: 75, width: "100%" }} />
+                  <Paper 
+                    style={{ height: 2000, width: "100%" }} 
+                  >
+                    {!bookSearchComplete 
+                      ? ( <> 
+                            <Typography>
+                              Loading...
+                            </Typography>
+                            <Typography>
+                              Loading...
+                            </Typography>
+                            <Typography>
+                              Loading....
+                            </Typography>
+                          </>
+                        )
+                      : (
+                          <Books
+                            bookData={bookData}
+                          ></Books>
+                        )
+                    }
+                    
+                  </Paper>
                 </Grid>
               </Grid>
             </header>
           </div>
         </Container>
       </ThemeProvider>
+      )
     </div>
   );
 }

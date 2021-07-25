@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useMutation } from "@apollo/client";
 import { NavLink, useLocation } from "react-router-dom";
+import { useQuery } from "@apollo/client";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
@@ -13,8 +13,10 @@ import happy from "../../assets/happy.jpg";
 import okay from "../../assets/okay.jpg";
 import anxious from "../../assets/anxious.jpg";
 import sad from "../../assets/sad.jpg";
-import { LOGIN_USER } from '../../utils/mutations'
-
+import Login from "../Login";
+import Signup from "../SignUp";
+import Auth from "../../utils/auth";
+import { GET_ME } from "../../utils/queries";
 
 const meditation = [
   {
@@ -29,6 +31,7 @@ const meditation = [
       Mindfulness: "Meditation/Music"
   },
 ];
+
 const activities = [
   {
     mydata:
@@ -42,6 +45,7 @@ const activities = [
       Mindfulness: "Actvities"
   },
 ];
+
 const books = [
   {
     mydata:
@@ -105,23 +109,34 @@ const useStyles = makeStyles({
   button: {
     marginRight: "1rem",
   },
+  media: {
+    height: 500,
+  }
 });
 
 export default function Header() {
-  const [location, setLocation] = useState('')
-  const [urlEndpoint, setUrlEndpoint] = useState('HOME')
-  const classes = useStyles()
+  const [location, setLocation] = useState('');
+  const [urlEndpoint, setUrlEndpoint] = useState('HOME');
+  const classes = useStyles();
   console.log('=================Location===================');
   console.log(location);
   console.log('=================Location===================');
 
   let presentLocation = useLocation();
 
+  const [loginModal, setLoginModal] = useState(false);
+  const [signupModal, setSignupModal] = useState(false);
+
+  const { data } = useQuery(GET_ME);
+  const userData = data?.me || [];
+
   useEffect(() => {
     setLocation(presentLocation.pathname)
     switch (presentLocation.pathname) {
       case '/':
-        setUrlEndpoint('HOME')
+        {urlEndpoint !== 'HOME' && (
+          setUrlEndpoint('HOME')
+        )}
         break;
       
       case '/happy':
@@ -142,21 +157,64 @@ export default function Header() {
       default:
         break;
     }
-  }, [presentLocation.pathname])
+  }, [presentLocation.pathname]);
+
   return (
     <>
-    <AppBar style={{ backgroundColor: "#65AC8D", color: "blue"}}>
+    <AppBar style={{ backgroundColor: "#65AC8D", color: "blue", display: "flex", justifyContent: "space-between" }}>
         <Toolbar>
+          {Auth.loggedIn() 
+            ? (
+              <Typography variant="h6" marginRight="15px">
+                Hi {userData.firstName}. 
+              </Typography>
+            )
+            : null
+          }
 
           <Typography variant="h6">
             How Are You Today?
           </Typography>
-            <Button 
-              // onClick={() => {setCurrentMood("None")}}
-            >
-              <Typography>{urlEndpoint}</Typography>
-            </Button>
+        
+            
+          <Box>
+            {urlEndpoint !== "HOME" && (
+              <Button>
+                <Typography>{urlEndpoint}</Typography>
+              </Button>
+            )}
+
+            {Auth.loggedIn() 
+              ? (
+                <Button
+                    onClick={() => {Auth.logout()}}
+                    variant="contained"
+                    color="primary"
+                    className={classes.button}
+                >
+                    Logout
+                </Button>
+              )
+              : (
+                <>
+                  <Login 
+                    classes={classes}
+                    loginModal={loginModal}
+                    setLoginModal={setLoginModal}
+                    signupModal={signupModal}
+                  />
+                  <Signup
+                    classes={classes}
+                    signupModal={signupModal}
+                    setSignupModal={setSignupModal}
+                    loginModal={loginModal}
+                  />
+                </>
+              )
+            }  
+          </Box>
         </Toolbar>
+        
       </AppBar>
       <Box className={classes.blankTopHeader}></Box>
       {urlEndpoint === "HOME"
@@ -171,24 +229,9 @@ export default function Header() {
                 <img width="400" height="400" src={logo_transparent} alt="logo" />
               </NavLink>
             </Box>
-            <Box>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Login
-              </Button>
-              <Button
-                variant="contained"
-                color="primary"
-                className={classes.button}
-              >
-                Signup
-              </Button>
-            </Box>
+            
           </Box>
-        : true
+        : null
       }
       <Box
         display="flex"
@@ -199,7 +242,6 @@ export default function Header() {
         <Box>
           <NavLink to="/happy">
             <img
-              // onClick={() => {setCurrentMood("Happy")}}
               className={classes.imgStyle}
               width="100"
               height="100"
@@ -223,7 +265,10 @@ export default function Header() {
           <span className={classes.span}>Okay</span>
         </Box>
         <Box>
-          <NavLink to="/anxious">
+          <NavLink 
+            to="/anxious"
+            classes={classes.button}
+          >
             {" "}
             <img
               className={classes.imgStyle}
@@ -274,46 +319,46 @@ export default function Header() {
                 );
               })}
             </Box>
-        <Box
-          display="flex"
-          flexWrap="nowrap"
-          justifyContent="space-around"
-          className={classes.topHeader}
-        >
-          {activities.map((item, idx) => {
-            return (
-              <Tools
-                key={idx}
-                mydata={item.mydata}
-                activities={item.activities}
-                whyActivities={item.whyActivities}
-                Mindfulness={item.Mindfulness}
-              />
-            );
-          })}
+          <Box
+            display="flex"
+            flexWrap="nowrap"
+            justifyContent="space-around"
+            className={classes.topHeader}
+          >
+            {activities.map((item, idx) => {
+              return (
+                <Tools
+                  key={idx}
+                  mydata={item.mydata}
+                  activities={item.activities}
+                  whyActivities={item.whyActivities}
+                  Mindfulness={item.Mindfulness}
+                />
+              );
+            })}
+          </Box>
+          <Box
+            display="flex"
+            flexWrap="nowrap"
+            justifyContent="space-around"
+            className={classes.topHeader}
+          >
+            {books.map((item, idx) => {
+              return (
+                <Tools
+                  key={idx}
+                  mydata={item.mydata}
+                  books={item.books}
+                  whyBooks={item.whyBooks}
+                  Mindfulness={item.Mindfulness}
+                  
+                />
+              );
+            })}
+          </Box>
+          
         </Box>
-        <Box
-          display="flex"
-          flexWrap="nowrap"
-          justifyContent="space-around"
-          className={classes.topHeader}
-        >
-          {books.map((item, idx) => {
-            return (
-              <Tools
-                key={idx}
-                mydata={item.mydata}
-                books={item.books}
-                whyBooks={item.whyBooks}
-                Mindfulness={item.Mindfulness}
-                
-              />
-            );
-          })}
-        </Box>
-        
-      </Box>
-      : true
+      : null
     }
     </>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import '../src/App.css';
 
 import {
@@ -13,22 +13,29 @@ import Okay from "./components/Okay";
 import Anxious from "./components/Anxious";
 import Sad from "./components/Sad";
 
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 
+const httpLink = createHttpLink({
+  uri: '/graphql',
+});
 
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem('id_token');
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : '',
+    },
+  };
+});
 
+const client = new ApolloClient({
+  link: authLink.concat(httpLink),
+  cache: new InMemoryCache(),
+});
 
 function App() {
-
-  // mood sections array
-  // const [moodSection] = useState([
-  //   {name: 'Happy'},
-  //   {name: 'Okay'},
-  //   {name: 'Anxious'},
-  //   {name: 'Sad'}
-  // ]);
-
-  // useState hook to set current mood section
-  // const [currentMood, setCurrentMood] = useState(moodSection[0]);
   
   // const [categories] = useState([
   //   {
@@ -49,13 +56,10 @@ function App() {
   // const [contactSelected, setContactSelected] = useState(false);
 
   return (
-    <div>
+    <ApolloProvider client={client}>
         <Router>
         <div>
-        <Header 
-          // currentMood={currentMood}
-          // setCurrentMood={setCurrentMood}
-        />
+        <Header/>
 
         {/* categories={categories}
         setCurrentCategory={setCurrentCategory}
@@ -98,11 +102,7 @@ function App() {
               </div>
             </div> */}
             <Route path="/happy">
-             
-             <Happy 
-                // currentMood={currentMood}
-                // setCurrentMood={setCurrentMood}
-             />
+              <Happy/>
             </Route>
             <Route path="/okay">
               <Okay />
@@ -113,12 +113,10 @@ function App() {
             <Route path="/sad">
               <Sad />
             </Route>
-          
           </Switch>
         </div>
       </Router>
-   
-    </div>
+    </ApolloProvider>
   );
 }
 
