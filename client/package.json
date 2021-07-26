@@ -2,7 +2,7 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:3111",  
+  "proxy": "http://localhost:3111",
   "dependencies": {
     "@apollo/client": "^3.3.21",
     "@material-ui/core": "^4.12.2",
