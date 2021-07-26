@@ -3,7 +3,7 @@
 
 ## Description:
 A digital tool to assist in finding resources to deal with mood shifts, anxiety, stress, sadness, and depression.
-indfulness at your fingertips! 
+Mindfulness at your fingertips! 
 Connecting you with direct resources to get you through the day based on your mood.
 
 ## Table of Contents: 
