@@ -50,8 +50,6 @@ const theme = createMuiTheme({
  
 });
 
-///////////////// WRITE CODE IN UTILS AND IMPORT IT!!!!!!!/////
-
 export default function Happy({ classes }) {
   const mood = 'Happy';
 
@@ -63,8 +61,8 @@ export default function Happy({ classes }) {
         const bookSearch = await searchGoogleBooks(mood);
 
         const { items } = await bookSearch.json();
-        console.log('items0', items[0])
-        const bookArr = [items[0], items[1], items[2]];
+        
+        const bookArr = await items.slice(0, 3);
 
         const bookInfo = await bookArr.map((book) => ({
           authors: book.volumeInfo.authors || ['No author displayed'],
@@ -74,12 +72,14 @@ export default function Happy({ classes }) {
           link: book.volumeInfo.previewLink || ''
       }));
 
-          setBookSearchComplete(true);
-          setBookData(bookInfo);
+        setBookData(bookInfo);  
+        setBookSearchComplete(true);
+              
     }
     catch (err) {
         console.log(err);
     }
+    console.log('bookData', bookData);
   };
 
   bookResults();

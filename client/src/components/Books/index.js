@@ -58,7 +58,7 @@ export default function BookCards({ bookData }) {
         
             </Card>
           
-            {/* <Card>
+            <Card>
                 
                 <CardMedia
                     className={classes.media}
@@ -122,8 +122,7 @@ export default function BookCards({ bookData }) {
                             </Button>
                         </CardActions>
                 
-                    </Card> */}
-
+            </Card>
 
 
         </>
