@@ -3,7 +3,7 @@
 
 ## Description:
 A digital tool to assist in finding resources to deal with mood shifts, anxiety, stress, sadness, and depression.
-indfulness at your fingertips! 
+Mindfulness at your fingertips! 
 Connecting you with direct resources to get you through the day based on your mood.
 
 ## Table of Contents: 
@@ -23,8 +23,10 @@ Connecting you with direct resources to get you through the day based on your mo
   -   Once I the the User chooses the mood I am then guided to the page with resources that can assist.
   -   Once I the User reaches that page with resources, I can choose videos, music, activities or books that will assist me.
 
-## Screenshot:
+## Screenshots:
 ![howru screenshot](https://user-images.githubusercontent.com/71949043/126914290-6c968732-2f2d-4267-b0b1-0d5f4a662ac1.png)
+![howru happy screenshot](![howru__happy_screenshot](https://user-images.githubusercontent.com/71949043/126922502-e09db0c7-3dd7-45a5-906c-9acf37688a60.png)
+
 
 ## Usage:
 Visit our site linked below and meditate.
