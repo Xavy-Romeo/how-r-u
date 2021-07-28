@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
-import Button from "@material-ui/core/button";
+import Button from "@material-ui/core/Button";
 import Auth from '../../utils/auth';
 import './Signup.css';
 
