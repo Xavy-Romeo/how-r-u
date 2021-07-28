@@ -32,7 +32,7 @@ Connecting you with direct resources to get you through the day based on your mo
 Visit our site linked below and meditate.
 
 ## Website: 
-[HowRU](https://google.com)
+https://howru-meditation.herokuapp.com/
 
 ## Technologies Used
 - Node.js
@@ -43,6 +43,7 @@ Visit our site linked below and meditate.
 - Material UI
 
 ## Links
+link to [HowRU](https://howru-meditation.herokuapp.com/) <br>
 link to [GitHub repo](https://github.com/Xavy-Romeo/how-r-u) <br>
 link to [Lucid](https://lucid.app/lucidchart/invitations/accept/inv_ca6ed448-f83f-4c41-91a8-b70d48c607dd) <br>
 link to presentation [Canva](https://www.canva.com/design/DAEk4ZzSWEI/Ebh83Ik6CqYrkhVZ_LO7zg/view?utm_content=DAEk4ZzSWEI&utm_campaign=designshare&utm_medium=link&utm_source=sharebutton)
