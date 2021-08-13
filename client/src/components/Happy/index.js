@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+
 import "../../App.css";
 import Auth from '../../utils/auth';
 import Books from '../Books';
@@ -11,43 +13,31 @@ import streetMarathon from '../../assets/Images/street-marathon-1149220_1920.jpg
 import yoga from '../../assets/Images/yoga-3053487_1280.jpg';
 import chi from '../../assets/Images/fu-3624167_1920.jpg';
 
-import { NavLink } from "react-router-dom";
+import { ThemeProvider, createTheme } from "@material-ui/core/styles";
+import { orange } from "@material-ui/core/colors";
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import CardContent from '@material-ui/core/CardContent';
 
-import {
-  makeStyles,
-  ThemeProvider,
-  createMuiTheme,
-} from "@material-ui/core/styles";
-import { green, orange } from "@material-ui/core/colors";
-
-import {
-  Button,
-  Typography,
-  Container,
-  Paper,
-  Grid,
-  AppBar,
-  Toolbar,
-  Card,
-  CardMedia,
-  CardContent 
-} from "@material-ui/core";
-
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     h2: {
-      fontSize: 24,
+      fontSize: 50, 
+      fontWeight:'bold'
     },
   },
   palette: {
-    primary: {
-      main: green[400],
-    },
     secondary: {
       main: orange[400],
     },
   },
- 
 });
 
 export default function Happy({ classes }) {
@@ -79,7 +69,6 @@ export default function Happy({ classes }) {
     catch (err) {
         console.log(err);
     }
-    console.log('bookData', bookData);
   };
 
   bookResults();
@@ -99,7 +88,6 @@ export default function Happy({ classes }) {
                       <Button
                         variant="contained"
                         color="primary"
-                        className={classes}
                       >
                         Home
                       </Button>
@@ -107,7 +95,6 @@ export default function Happy({ classes }) {
                         onClick={() => {Auth.logout()}}
                         variant="contained"
                         color="primary"
-                        className={classes}
                       >
                         Logout
                       </Button>

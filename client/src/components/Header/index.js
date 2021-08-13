@@ -1,22 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { useQuery } from "@apollo/client";
+
+import { makeStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import { makeStyles } from "@material-ui/core/styles";
-import Tools from "../Tools";
+
 import logo_transparent from "../../assets/logo_transparent.png";
 import happy from "../../assets/happy.jpg";
 import okay from "../../assets/okay.jpg";
 import anxious from "../../assets/anxious.jpg";
 import sad from "../../assets/sad.jpg";
+
 import Login from "../Login";
 import Signup from "../SignUp";
 import Auth from "../../utils/auth";
 import { GET_ME } from "../../utils/queries";
+import Tools from "../Tools";
 
 const meditation = [
   {
@@ -110,9 +113,6 @@ export default function Header() {
   const [location, setLocation] = useState('');
   const [urlEndpoint, setUrlEndpoint] = useState('HOME');
   const classes = useStyles();
-  console.log('=================Location===================');
-  console.log(location);
-  console.log('=================Location===================');
 
   let presentLocation = useLocation();
 

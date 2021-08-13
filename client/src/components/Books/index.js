@@ -1,15 +1,13 @@
 import React from 'react';
 
-import {
-    Card,
-    CardActions,
-    CardContent,
-    CardMedia,
-    Button,
-    Typography,
-    makeStyles,
-    Link
-} from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles({
     root: {
@@ -26,7 +24,6 @@ export default function BookCards({ bookData }) {
     return (
         <>
             <Card>
-        
                 <CardMedia
                     className={classes.media}
                     image={bookData[0].image}
@@ -55,11 +52,9 @@ export default function BookCards({ bookData }) {
                         </Link>
                     </Button>
                 </CardActions>
-        
             </Card>
           
-            <Card>
-                
+            <Card>     
                 <CardMedia
                     className={classes.media}
                     image={bookData[1].image}
@@ -88,44 +83,38 @@ export default function BookCards({ bookData }) {
                         </Link>
                     </Button>
                 </CardActions>
-        
             </Card>
 
-            <Card>
+            <Card> 
+                <CardMedia
+                    className={classes.media}
+                    image={bookData[2].image}
+                    title='Book image'
+                >             
+                </CardMedia>
                 
-                        <CardMedia
-                            className={classes.media}
-                            image={bookData[2].image}
-                            title='Book image'
-                        >             
-                        </CardMedia>
-                        
-                        <CardContent>
-                            <Typography component='p'>
-                                Title: {bookData[2].title}
-                            </Typography>
-                            <Typography component='p'>    
-                                Author: {bookData[2].authors}
-                            </Typography>
-                        </CardContent>
+                <CardContent>
+                    <Typography component='p'>
+                        Title: {bookData[2].title}
+                    </Typography>
+                    <Typography component='p'>    
+                        Author: {bookData[2].authors}
+                    </Typography>
+                </CardContent>
 
-                        <CardActions>
-                            <Button>
-                                <Link
-                                    href={bookData[2].link}
-                                    target='_blank'
-                                    width='100%'
-                                    height='100%'
-                                >
-                                    View Book
-                                </Link>
-                            </Button>
-                        </CardActions>
-                
+                <CardActions>
+                    <Button>
+                        <Link
+                            href={bookData[2].link}
+                            target='_blank'
+                            width='100%'
+                            height='100%'
+                        >
+                            View Book
+                        </Link>
+                    </Button>
+                </CardActions>
             </Card>
-
-
         </>
-       
     );
 };
