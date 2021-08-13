@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "../../App.css";
-import { NavLink } from "react-router-dom";
 
-import Auth from '../../utils/auth';
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
 
@@ -15,16 +13,14 @@ import bicycle from '../../assets/Images/bicycle-384566_1920.jpg';
 
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import { orange } from '@material-ui/core/colors';
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
+import Box from '@material-ui/core/Box';
 
 const theme = createTheme({
   typography: {
@@ -75,34 +71,12 @@ export default function Okay({ classes }) {
   bookResults();
 
   return (
-    <div>
+    <Box>
       {" "}
       <ThemeProvider theme={theme}>
         <Container maxWidth="lg">
-          <div className="App">
-            <header className="okayDiv">
-              <AppBar color="secondary">
-                <Toolbar>
-                  <Typography variant="h6">How Are You Today?</Typography>
-                  <NavLink to="/">
-                    <Button
-                      variant="contained"
-                      color="primary"
-                      className={classes}
-                    >
-                      Home
-                    </Button>
-                    <Button
-                      onClick={() => {Auth.logout()}}
-                      variant="contained"
-                      color="primary"
-                      className={classes}
-                    >
-                      Logout
-                    </Button>
-                  </NavLink>
-                </Toolbar>
-              </AppBar>
+          <Box className="App">
+            <Box className="okayDiv">
               <Typography variant="h2" component="div">
                 Okay
               </Typography>
@@ -237,10 +211,10 @@ export default function Okay({ classes }) {
                   </Paper>
                 </Grid>
               </Grid>
-            </header>
-          </div>
+            </Box>
+          </Box>
         </Container>
       </ThemeProvider>
-    </div>
+    </Box>
   );
 }

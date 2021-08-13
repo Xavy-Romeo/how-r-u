@@ -9,6 +9,7 @@ import {
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 
+import Content from './components/Content';
 import Header from "./components/Header";
 import Happy from "./components/Happy";
 import Okay from "./components/Okay";
@@ -38,9 +39,9 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
+        <Header/>
         <Router>
-        <div>
-          <Header/>
+          <Content />    
           <Switch>
             <Route path="/happy">
               <Happy/>
@@ -55,7 +56,6 @@ function App() {
               <Sad />
             </Route>
           </Switch>
-        </div>
       </Router>
     </ApolloProvider>
   );
