@@ -25,7 +25,7 @@ Connecting you with direct resources to get you through the day based on your mo
 
 ## Screenshots:
 ![howru screenshot](https://user-images.githubusercontent.com/71949043/126914290-6c968732-2f2d-4267-b0b1-0d5f4a662ac1.png)
-![howru happy screenshot](![howru__happy_screenshot](https://user-images.githubusercontent.com/71949043/126922502-e09db0c7-3dd7-45a5-906c-9acf37688a60.png)
+![howru happy screenshot](https://user-images.githubusercontent.com/71949043/126922502-e09db0c7-3dd7-45a5-906c-9acf37688a60.png)
 
 
 ## Usage:
@@ -35,11 +35,11 @@ Visit our site linked below and meditate.
 https://howru-meditation.herokuapp.com/
 
 ## Technologies Used
-- Node.js
+- React 
 - MongoDB
 - Express.js
 - GraphQL
-- React
+- Node.js
 - Material UI
 
 ## Links
@@ -53,12 +53,12 @@ This project is covered under the MIT license.
 [Click here to see the terms of the license](https://choosealicense.com/licenses/mit/)
 
 ## Collaborators:
-* Javier Vazquez
+* Xavy Romeo
 * Tricia Strickland
 * Wayne Edwards
 
 ## Questions: 
 Any questions? Feel free to contact via our GitHub:
-<br> Javier: [Xavy-Romeo](https://github.com/Xavy-Romeo)
+<br> Xavy: [Xavy-Romeo](https://github.com/Xavy-Romeo)
 <br> Tricia: [tstrickland88](https://github.com/tstrickland88)
 <br> Wayne: [WayneEdwards](https://github.com/WayneEdwards)

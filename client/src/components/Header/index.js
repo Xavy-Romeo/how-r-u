@@ -60,14 +60,6 @@ const books = [
   },
 ];
 
-// const defaultProps = {
-//   bgcolor: "background.paper",
-//   borderColor: "text.primary",
-//   m: 1,
-//   border: 1,
-//   style: { width: "5rem", height: "5rem" },
-// };
-
 const useStyles = makeStyles({
   navLinks: {
     background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",

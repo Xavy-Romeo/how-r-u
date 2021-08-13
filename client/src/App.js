@@ -5,16 +5,15 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  
 } from "react-router-dom";
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+
 import Header from "./components/Header";
 import Happy from "./components/Happy";
 import Okay from "./components/Okay";
 import Anxious from "./components/Anxious";
 import Sad from "./components/Sad";
-
-import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
-import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -36,71 +35,13 @@ const client = new ApolloClient({
 });
 
 function App() {
-  
-  // const [categories] = useState([
-  //   {
-  //     name: "Meditation/Music",
-  //     description:
-  //       "Guided and unguided meditation videos and music to help calm the mind and soul.",
-  //   },
-  //   { name: "Activities", description: "Activities and exercises that keep the body moving and help to relieve stress." },
-    
-  //   {
-  //     name: "Books",
-  //     description: "Multiple books by many authors who can offer guidance.",
-  //   },
-  // ]);
-
-  // const [currentCategory, setCurrentCategory] = useState(categories[0]);
-
-  // const [contactSelected, setContactSelected] = useState(false);
 
   return (
     <ApolloProvider client={client}>
         <Router>
         <div>
-        <Header/>
-
-        {/* categories={categories}
-        setCurrentCategory={setCurrentCategory}
-        currentCategory={currentCategory}
-        contactSelected={contactSelected}
-        setContactSelected={setContactSelected}
-      
-          
-          <img src={logo} alt="Logo" />;
-
-            <h1 className="headertitle">How Are You Today?</h1>
-            <p> An Outer tool For Inner Peace</p> */}
-            {/* </Header> */}
-          {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+          <Header/>
           <Switch>
-            {/* <Route path="/home">
-              <Home />
-            </Route> */}
-            {/* <div class="row">
-              <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
-                <div class="mood logo">
-                  <img src={logo} />
-                </div>
-                </div>
-                <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
-                <div class="mood logo">
-                  <img src={logo} />
-                </div>
-                </div>
-                <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
-                <div class="mood logo">
-                  <img src={logo} />
-                </div>
-                </div>
-                <div class= "col-lg-3 col-md-6 col-sm-12 custom grid">
-                <div class="mood logo">
-                  <img src={logo} />
-                </div>
-              </div>
-            </div> */}
             <Route path="/happy">
               <Happy/>
             </Route>
