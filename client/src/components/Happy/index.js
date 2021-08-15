@@ -77,7 +77,7 @@ export default function Happy({ classes }) {
         <Container maxWidth="lg">
           <Box className="App">
             <Box className="happyDiv">
-              <Typography variant="h2" component="div">
+              <Typography variant="h2" component="div" style={{fontFamily: 'Abril Fatface'}}>
                 Happy
               </Typography>
               <Typography variant="subtitle1">
@@ -86,7 +86,7 @@ export default function Happy({ classes }) {
 
               <Grid container spacing={2} justify="center">
                 <Grid item xs={12} sm={4} m={3}>
-                <h2>Meditation</h2>
+                <h2 style={{fontFamily: 'Abril Fatface'}}>Meditation</h2>
                   <Paper 
                     style={{ height: 800, width: "100%" }}
                   >
