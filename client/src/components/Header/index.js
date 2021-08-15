@@ -1,20 +1,22 @@
 import React, { useState } from 'react';
 import { useQuery } from '@apollo/client';
+import { NavLink } from 'react-router-dom';
 
-import Box from '@material-ui/core/Box';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
+import Box from '@material-ui/core/Box';
 
 import Login from '../Login';
 import Signup from '../SignUp';
 import Auth from '../../utils/auth';
 import { GET_ME } from '../../utils/queries';
 import useStyles from './styles'; 
+import Logo from '../../assets/logo_transparent.png';
 
-export default function Header() {
+export default function Header({ urlEndpoint, setUrlEndpoint }) {
  
   const classes = useStyles();
 
@@ -26,25 +28,59 @@ export default function Header() {
 
   return (
     <>
-      <AppBar style={{ backgroundColor: '#65AC8D', color: 'blue', display: 'flex', justifyContent: 'space-between' }}>
-          <Toolbar>
-            {Auth.loggedIn() 
-              ? (
-                <Grid item xs={1}>
-                <Typography variant='h6' marginRight='15px'>
-                  Hi {userData.firstName}. 
-                </Typography>
+      <AppBar>
+          <Toolbar 
+            className={`${classes.toolBar} 
+              ${(urlEndpoint !== 'HOME') 
+                ? classes.toolBar2
+                : '' }`}
+          > 
+            <Box
+              onClick={() => setUrlEndpoint('HOME')}
+            > 
+              <NavLink to='/'>
+                <img src={Logo} className={classes.logoHeader} />
+              </NavLink>
+            </Box>
+            
+            <Grid container justifyContent='space-between' alignItems='center'>
+              <Grid item>
+                <Grid container>
+                  {Auth.loggedIn() 
+                    ? (
+                      <Grid item>
+                        <Typography className={classes.font} variant='h3'>
+                          Hi {userData.firstName}. 
+                        </Typography>
+                      </Grid>
+                    )
+                    : null
+                  }
+                  
+                  <Typography  className={classes.font} variant='h3'>
+                    How Are You Today?
+                  </Typography>
                 </Grid>
-              )
-              : null
-            }
-            
-            <Grid container justifyContent='space-between'>
-              <Typography variant='h6'>
-                How Are You Today?
-              </Typography>
-            
-              <Box>
+              </Grid>
+                
+              <Grid item>
+                {urlEndpoint !== "HOME" && (
+                  <NavLink to='/' variant='text' className={classes.homeButton}>
+                    <Button
+                      onClick={() => setUrlEndpoint('HOME')}
+                      variant='contained'
+                      color='primary'
+                      className={classes.button}
+                    >
+                      
+                        
+                          HOME
+                        
+                      
+                      
+                    </Button>
+                  </NavLink>
+                )}
                 {Auth.loggedIn() 
                   ? (
                     <Button
@@ -73,8 +109,13 @@ export default function Header() {
                     </>
                   )
                 }  
-              </Box>
+              </Grid>
             </Grid>
+            
+            
+              
+            
+              
           </Toolbar>
           
         </AppBar>  

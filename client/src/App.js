@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import '../src/App.css';
 
 import {
@@ -37,14 +37,22 @@ const client = new ApolloClient({
 
 function App() {
 
+  const [urlEndpoint, setUrlEndpoint] = useState('HOME');
+
   return (
     <ApolloProvider client={client}>
-        <Header/>
         <Router>
-          <Content />    
+          <Header
+            urlEndpoint={urlEndpoint}
+            setUrlEndpoint={setUrlEndpoint}
+          />
+          <Content 
+            urlEndpoint={urlEndpoint}
+            setUrlEndpoint={setUrlEndpoint}
+          />    
           <Switch>
             <Route path="/happy">
-              <Happy/>
+              <Happy />
             </Route>
             <Route path="/okay">
               <Okay />

@@ -55,14 +55,13 @@ const books = [
     },
 ];
  
-export default function Content() {  
+export default function Content({ urlEndpoint, setUrlEndpoint }) {  
     const classes = useStyles();
 
     const [location, setLocation] = useState('');
-    const [urlEndpoint, setUrlEndpoint] = useState('HOME');
 
     let presentLocation = useLocation();
-
+  
     useEffect(() => {
         setLocation(presentLocation.pathname)
         switch (presentLocation.pathname) {
@@ -96,17 +95,17 @@ export default function Content() {
         <>    
             <Box className={classes.blankTopHeader}></Box>
             {urlEndpoint === 'HOME'
-            ? <Box
-                display='flex'
-                flexWrap='wrap'
-                justifyContent='space-between'
-                className={classes.topHeader}
+            ?   <Box
+                    display='flex'
+                    flexWrap='wrap'
+                    justifyContent='space-between'
+                    className={classes.topHeader}
                 >
-                <Box>
-                    <NavLink to='/'>
-                    <img width='400' height='400' src={logo_transparent} alt='logo' />
-                    </NavLink>
-                </Box>
+                    <Box>
+                        <NavLink to='/'>
+                            <img width='400' height='400' src={logo_transparent} alt='logo' />
+                        </NavLink>
+                    </Box>
                 
                 </Box>
             : null
