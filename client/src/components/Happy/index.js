@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 
-import "../../App.css";
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
 import useStyles from './styles';
+import '../../App.css';
 
 import meditationPeace from '../../assets/Images/buddhism-2214532_1280.jpg';
 import stones from '../../assets/Images/stones-2040340_1920.jpg';
@@ -77,7 +77,7 @@ export default function Happy() {
                   Meditation
                 </Typography>
                 <Paper 
-                  style={{ height: 800, width: "90%", margin: '0 2.5% 0 7.5%'}}
+                  style={{ height: 1750, width: "90%", margin: '0 2.5% 0 7.5%'}}
                 >
                   <Card>
                     <CardMedia
@@ -106,9 +106,9 @@ export default function Happy() {
                       title='stones'
                     />
                     <CardContent>
-                      <Typography>
+                      
                         <iframe width="100%" height="300px" src="https://www.youtube.com/embed/ZVmjNLqUkyI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      </Typography>
+                      
                     </CardContent>
                   </Card>
                   <Card>
@@ -118,9 +118,9 @@ export default function Happy() {
                       title='happy couple'
                     />
                     <CardContent>
-                      <Typography>
+                      
                         <iframe width="100%" height="300px" src="https://www.youtube.com/embed/62uqI43b7hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      </Typography>
+                      
                     </CardContent>
                   </Card>
                 </Paper>
@@ -130,8 +130,8 @@ export default function Happy() {
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Activities
                 </Typography>
-              <Paper 
-                  style={{ height: 800, width: "90%", margin: '0 5% 0 5%'}}
+                <Paper 
+                  style={{ height: 1750, width: "90%", margin: '0 5% 0 5%'}}
                 >
                   <Card>
                     <CardMedia
@@ -160,9 +160,9 @@ export default function Happy() {
                     />
 
                     <CardContent>
-                      <Typography>
+                  
                         <iframe width="100%" height="300px" src="https://www.youtube.com/embed/HlgmHxVXw7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      </Typography>
+                     
                     </CardContent>
                   </Card>
                   <Card>
@@ -172,20 +172,20 @@ export default function Happy() {
                       title='sunset chi'
                     />
                     <CardContent>
-                      <Typography>
+                      
                       <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                      </Typography>
+                      
                     </CardContent>
                   </Card>
                 </Paper>
               </Grid>
               
               <Grid item xs={12} sm={4} m={3}>
-              <Typography variant='h3' className={classes.sectionTitle}>
+                <Typography variant='h3' className={classes.sectionTitle}>
                   Books
                 </Typography>
                 <Paper 
-                  style={{ height: '95%', width: "90%", margin: '0 7.5% 0 2.5%'}} 
+                  style={{ height: 1750, width: "90%", margin: '0 7.5% 0 2.5%'}} 
                 >
                   <Card>
                     <CardMedia
