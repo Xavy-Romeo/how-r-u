@@ -12,6 +12,10 @@ const useStyles = makeStyles({
         fontFamily: 'Playfair Display, serif',
         marginBottom: '5px',
         textShadow: '1px 1px 1px black',
+    },
+    loading: {
+        fontFamily: 'Playfair Display, serif',
+        color: 'red'
     }
 });
 
