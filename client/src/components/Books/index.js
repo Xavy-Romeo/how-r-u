@@ -10,11 +10,10 @@ import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
 
 const useStyles = makeStyles({
-    root: {
-      maxWidth: 345,
-    },
     media: {
-      height: 500,
+      height: '300px',
+      width: '200px',
+      margin: '20px auto 0 auto',
     },
 });
 
@@ -23,7 +22,7 @@ export default function BookCards({ bookData }) {
 
     return (
         <>
-            <Card>
+            <Card style={{backgroundColor: 'black', margin: '15px'}}>
                 <CardMedia
                     className={classes.media}
                     image={bookData[0].image}
@@ -31,7 +30,7 @@ export default function BookCards({ bookData }) {
                 >             
                 </CardMedia>
                 
-                <CardContent>
+                <CardContent style={{color: 'white'}}>
                     <Typography component='p'>
                         Title: {bookData[0].title}
                     </Typography>
@@ -40,21 +39,22 @@ export default function BookCards({ bookData }) {
                     </Typography>
                 </CardContent>
 
-                <CardActions>
-                    <Button>
-                        <Link
-                            href={bookData[0].link}
-                            target='_blank'
-                            width='100%'
-                            height='100%'
-                        >
+                <CardActions style={{display: 'flex', justifyContent: 'center'}}>
+                    <Link
+                        href={bookData[0].link}
+                        target='_blank'
+                        width='100%'
+                        height='100%'
+                        underline='none'
+                    >
+                        <Button variant='outlined' variant='contained' color='primary'>
                             View Book
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>            
                 </CardActions>
             </Card>
           
-            <Card>     
+            <Card style={{backgroundColor: 'black', margin: '15px'}}>     
                 <CardMedia
                     className={classes.media}
                     image={bookData[1].image}
@@ -62,7 +62,7 @@ export default function BookCards({ bookData }) {
                 >             
                 </CardMedia>
                 
-                <CardContent>
+                <CardContent style={{color: 'white'}}>
                     <Typography component='p'>
                         Title: {bookData[1].title}
                     </Typography>
@@ -71,21 +71,22 @@ export default function BookCards({ bookData }) {
                     </Typography>
                 </CardContent>
 
-                <CardActions>
-                    <Button>
-                        <Link
-                            href={bookData[1].link}
-                            target='_blank'
-                            width='100%'
-                            height='100%'
-                        >
+                <CardActions style={{display: 'flex', justifyContent: 'center'}}>
+                    <Link
+                        href={bookData[1].link}
+                        target='_blank'
+                        width='100%'
+                        height='100%'
+                        underline='none'
+                    >
+                        <Button variant='outlined' variant='contained' color='primary'>
                             View Book
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link>     
                 </CardActions>
             </Card>
 
-            <Card> 
+            <Card style={{backgroundColor: 'black', margin: '15px'}}> 
                 <CardMedia
                     className={classes.media}
                     image={bookData[2].image}
@@ -93,7 +94,7 @@ export default function BookCards({ bookData }) {
                 >             
                 </CardMedia>
                 
-                <CardContent>
+                <CardContent style={{color: 'white'}}>
                     <Typography component='p'>
                         Title: {bookData[2].title}
                     </Typography>
@@ -102,17 +103,18 @@ export default function BookCards({ bookData }) {
                     </Typography>
                 </CardContent>
 
-                <CardActions>
-                    <Button>
-                        <Link
-                            href={bookData[2].link}
-                            target='_blank'
-                            width='100%'
-                            height='100%'
-                        >
+                <CardActions style={{display: 'flex', justifyContent: 'center'}}>
+                    <Link
+                        href={bookData[2].link}
+                        target='_blank'
+                        width='100%'
+                        height='100%'
+                        underline='none'
+                    >
+                        <Button variant='outlined' variant='contained' color='primary'>
                             View Book
-                        </Link>
-                    </Button>
+                        </Button>
+                    </Link> 
                 </CardActions>
             </Card>
         </>

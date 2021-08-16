@@ -120,8 +120,8 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                     <NavLink to='/happy'>
                         <img
                             className={classes.imgStyle}
-                            width='100'
-                            height='100'
+                            width='200'
+                            height='200'
                             src={happy}
                             alt='Happy'
                         />
@@ -133,8 +133,8 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                     <NavLink to='/okay'>
                         <img
                             className={classes.imgStyle}
-                            width='100'
-                            height='100'
+                            width='200'
+                            height='200'
                             src={okay}
                             alt='Okay'
                         />
@@ -145,8 +145,8 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                     <NavLink to='/anxious'>
                         <img
                             className={classes.imgStyle}
-                            width='100'
-                            height='100'
+                            width='200'
+                            height='200'
                             src={anxious}
                             alt='Anxious'
                         />
@@ -157,8 +157,8 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                     <NavLink to='/sad'>
                         <img
                             className={classes.imgStyle}
-                            width='100'
-                            height='100'
+                            width='200'
+                            height='200'
                             src={sad}
                             alt='Sad'
                         />

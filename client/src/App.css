@@ -6,7 +6,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: rgba(247, 143, 7, 0.658);
+  color: rgb(247, 143, 7);
 }
 .anxiousDiv{
   background-color:rgba(228, 28, 28, 0.678);
