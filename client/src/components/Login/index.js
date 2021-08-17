@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import './Login.css';
 
-import Button from "@material-ui/core/Button";
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
 
 import Auth from'../../utils/auth';
 import { LOGIN_USER } from '../../utils/mutations';
+import useStyles from './styles'; 
 
-export default function Login({ classes, loginModal, setLoginModal, signupModal }) {
-
+export default function Login({ loginModal, setLoginModal, signupModal }) {
+    const classes = useStyles();
+    
     const [userData, setUserData] = useState({ username: '', password: ' '});
 
-    const [login, { error }] = useMutation(LOGIN_USER);
+    const [login] = useMutation(LOGIN_USER);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -37,10 +40,10 @@ export default function Login({ classes, loginModal, setLoginModal, signupModal 
     };
 
     if (loginModal) {
-        document.body.classList.add('modal-active');
+        document.body.classList.add('modalActive');
     }
     else {
-        document.body.classList.remove('modal-active');
+        document.body.classList.remove('modalActive');
     }
     
     return (
@@ -57,48 +60,65 @@ export default function Login({ classes, loginModal, setLoginModal, signupModal 
             )}
 
             {loginModal && (
-                <div className="login-modal">
-                    <div 
-                        className="overlay" 
+                <Box className={classes.loginModal}>
+                    <Box 
+                        className={classes.overlay} 
                         onClick={() => {setLoginModal(false)}}
-                    ></div>
-                    <div className="login-container">
-                        <form className="login-form"> 
-                            <h3>Login</h3>
+                    />
+                    <Box className={classes.loginContainer}>
+                        <form className={classes.loginForm}> 
+                            <Typography className={classes.loginTitle}>
+                                Login
+                            </Typography>
                             
-                            <label htmlFor="username">Username:</label>
+                            <label htmlFor="username">
+                                <Typography  className={classes.inputLabel}>
+                                    Username:
+                                </Typography>
+                            </label>
                             <input
                                 onChange={handleInputChange} 
                                 type="text" 
                                 placeholder="Username" 
                                 name="username" 
                                 id="login-username"
-                                value={userData.username}
-                            ></input>
+                                className={classes.input}
+                                autoComplete='on'
+                            />
 
-                            <label htmlFor="password">Password:</label>
+                            <label htmlFor="password">
+                                <Typography  className={classes.inputLabel}>
+                                    Password:
+                                </Typography>
+                            </label>
                             <input
                                 onChange={handleInputChange} 
-                                type="text" 
+                                type="password" 
                                 placeholder="Password" 
                                 name="password" 
                                 id="login-password"
-                                value={userData.password}
-                            ></input>
+                                className={classes.input}
+                                autoComplete='on'
+                            />
 
-                            <div className="button-div">
+                            <Box className={classes.buttonDiv}>
                                 <button 
                                     type="button" 
                                     onClick={() => {
                                         loginSubmit()
                                         setLoginModal(false)
                                     }}
-                                >Login</button>   
-                            </div>
+                                    className={classes.loginButton}
+                                >
+                                    <Typography className={classes.buttonText}>
+                                        Login
+                                    </Typography>
+                                </button>   
+                            </Box>
                         </form>
-                    </div>
+                    </Box>
                     
-                </div>
+                </Box>
                 
             )}
         </>

@@ -10,7 +10,7 @@ import anxious from '../../assets/anxious.jpg';
 import sad from '../../assets/sad.jpg';
 
 import Tools from '../Tools';
-import useStyles from '../Header/styles';  
+import useStyles from './styles';  
 
 const meditation = [
     {
@@ -26,7 +26,7 @@ const meditation = [
     },
 ];
   
-  const activities = [
+const activities = [
     {
         mydata:
             'Activities — such as walking, stretching or jogging — that involve repetitive movements of large muscle groups can be particularly stress relieving.',
@@ -106,68 +106,62 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                             <img width='400' height='400' src={logo_transparent} alt='logo' />
                         </NavLink>
                     </Box>
-                
                 </Box>
             : null
             }
             <Box
-            display='flex'
-            flexWrap='nowrap'
-            justifyContent='space-around'
-            className={classes.emotions}
+                display='flex'
+                flexWrap='nowrap'
+                justifyContent='space-around'
+                className={classes.emotions}
             >
-                <Box>
+                <Box className={classes.moodContainer}>
                     <NavLink to='/happy'>
-                    <img
-                        className={classes.imgStyle}
-                        width='100'
-                        height='100'
-                        src={happy}
-                        alt='Happy'
-                    />
+                        <img
+                            className={classes.imgStyle}
+                            width='200'
+                            height='200'
+                            src={happy}
+                            alt='Happy'
+                        />
+                        
                     </NavLink>
                     <span className={classes.span}>Happy</span>
                 </Box>
-                <Box>
+                <Box className={classes.moodContainer}>
                     <NavLink to='/okay'>
-                    {' '}
-                    <img
-                        className={classes.imgStyle}
-                        width='100'
-                        height='100'
-                        src={okay}
-                        alt='Okay'
-                    />
-                    </NavLink>
+                        <img
+                            className={classes.imgStyle}
+                            width='200'
+                            height='200'
+                            src={okay}
+                            alt='Okay'
+                        />
+                        </NavLink>
                     <span className={classes.span}>Okay</span>
                 </Box>
-                <Box>
-                    <NavLink 
-                    to='/anxious'
-                    classes={classes.button}
-                    >
-                    {' '}
-                    <img
-                        className={classes.imgStyle}
-                        width='100'
-                        height='100'
-                        src={anxious}
-                        alt='Anxious'
-                    />
+                <Box className={classes.moodContainer}>
+                    <NavLink to='/anxious'>
+                        <img
+                            className={classes.imgStyle}
+                            width='200'
+                            height='200'
+                            src={anxious}
+                            alt='Anxious'
+                        />
                     </NavLink>
                     <span className={classes.span}>Anxious</span>
                 </Box>
-                <Box>
+                <Box className={classes.moodContainer}>
                     <NavLink to='/sad'>
-                    {' '}
-                    <img
-                        className={classes.imgStyle}
-                        width='100'
-                        height='100'
-                        src={sad}
-                        alt='Sad'
-                    />
-                    </NavLink>
+                        <img
+                            className={classes.imgStyle}
+                            width='200'
+                            height='200'
+                            src={sad}
+                            alt='Sad'
+                        />
+                        </NavLink>
                     <span className={classes.span}>Sad</span>
                 </Box>
             </Box>
@@ -185,15 +179,15 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                             className={classes.topHeader}
                         >
                             {meditation.map((item, idx) => {
-                            return (
-                                <Tools
-                                key={idx}
-                                mydata={item.mydata}
-                                meditation={item.meditation}
-                                whyMeditation={item.whyMeditation}
-                                Mindfulness={item.Mindfulness}
-                                />
-                            );
+                                return (
+                                    <Tools
+                                        key={idx}
+                                        mydata={item.mydata}
+                                        meditation={item.meditation}
+                                        whyMeditation={item.whyMeditation}
+                                        Mindfulness={item.Mindfulness}
+                                    />
+                                );
                             })}
                         </Box>
                         <Box
@@ -204,34 +198,34 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                         >
                             {activities.map((item, idx) => {
                                 return (
-                                <Tools
-                                    key={idx}
-                                    mydata={item.mydata}
-                                    activities={item.activities}
-                                    whyActivities={item.whyActivities}
-                                    Mindfulness={item.Mindfulness}
-                                />
+                                    <Tools
+                                        key={idx}
+                                        mydata={item.mydata}
+                                        activities={item.activities}
+                                        whyActivities={item.whyActivities}
+                                        Mindfulness={item.Mindfulness}
+                                    />
                                 );
                             })}
                         </Box>
                         <Box
-                        display='flex'
-                        flexWrap='nowrap'
-                        justifyContent='space-around'
-                        className={classes.topHeader}
+                            display='flex'
+                            flexWrap='nowrap'
+                            justifyContent='space-around'
+                            className={classes.topHeader}
                         >
-                        {books.map((item, idx) => {
-                            return (
-                            <Tools
-                                key={idx}
-                                mydata={item.mydata}
-                                books={item.books}
-                                whyBooks={item.whyBooks}
-                                Mindfulness={item.Mindfulness}
-                                
-                            />
-                            );
-                        })}
+                            {books.map((item, idx) => {
+                                return (
+                                    <Tools
+                                        key={idx}
+                                        mydata={item.mydata}
+                                        books={item.books}
+                                        whyBooks={item.whyBooks}
+                                        Mindfulness={item.Mindfulness}
+                                        
+                                    />
+                                );
+                            })}
                         </Box>
                     </Box>
                 : null

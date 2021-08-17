@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
+
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
+import Typography from '@material-ui/core/Typography';
+
 import { ADD_USER } from '../../utils/mutations';
-import Button from "@material-ui/core/Button";
 import Auth from '../../utils/auth';
-import './Signup.css';
+import useStyles from './styles';
 
+export default function Signup({ signupModal, setSignupModal, loginModal }) {
+    const classes = useStyles();
 
-export default function Signup({ classes, signupModal, setSignupModal, loginModal }) {
-    
     const [userData, setUserData] = useState({
        firstName: '', lastName: '', email: '', username: '', password: '' 
     });
 
-    const [addUser, { error }] = useMutation(ADD_USER);
+    const [addUser] = useMutation(ADD_USER);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -40,10 +44,10 @@ export default function Signup({ classes, signupModal, setSignupModal, loginModa
     };
 
     if (signupModal) {
-        document.body.classList.add('modal-active');
+        document.body.classList.add('modalActive');
     }
     else {
-        document.body.classList.remove('modal-active');
+        document.body.classList.remove('modalActive');
     }
     
     return (
@@ -60,83 +64,105 @@ export default function Signup({ classes, signupModal, setSignupModal, loginModa
             )}
 
             {signupModal && (
-                <div className="signup-modal">
-                    <div 
-                        className="overlay"
+                <Box className={classes.signupModal}>
+                    <Box 
+                        className={classes.overlay}
                         onClick={() => {setSignupModal(false)}}
-                    ></div>
-                    <div className="signup-container">
-                        <form className="signup-form"> 
-                            <h3>Signup</h3>
+                    />
+                    <Box className={classes.signupContainer}>
+                        <form className={classes.signupForm}> 
+                            <Typography className={classes.signupTitle}>
+                                Signup
+                            </Typography>
 
-                            <div className="signup-names">
-                                <div>
-                                    <label htmlFor="firstName">First Name:</label>
+                            <Box className={classes.signupNames}>
+                                <Box>
+                                    <label htmlFor="firstName" className={classes.inputLabel}>
+                                        First Name:
+                                    </label>
                                     <input
                                         onChange={handleInputChange} 
                                         type="text" 
                                         placeholder="First Name" 
                                         name="firstName" 
                                         id="signup-first-name"
-                                        value={userData.firstName}
-                                    ></input>
-                                </div>    
+                                        className={classes.input}
+                                        autoComplete='on'
+                                    />
+                                </Box>    
                                 
-                                <div className="signup-last">
-                                    <label htmlFor="lastName">Last Name:</label>
+                                <Box className={classes.signupLast}>
+                                    <label htmlFor="lastName"  className={classes.inputLabel}>
+                                        Last Name:
+                                    </label>
                                     <input
                                         onChange={handleInputChange} 
                                         type="text" 
                                         placeholder="Last Name" 
                                         name="lastName" 
                                         id="signup-last-name"
-                                        value={userData.lastName}
-                                    ></input>
-                                </div>
-                            </div>
+                                        className={classes.input}
+                                        autoComplete='on'
+                                    />
+                                </Box>
+                            </Box>
 
-                            <label htmlFor="email">Email:</label>
+                            <label htmlFor="email"  className={classes.inputLabel}>
+                                Email:
+                            </label>
                             <input 
                                 onChange={handleInputChange}
                                 type="text" 
                                 placeholder="Email" 
                                 name="email" 
                                 id="signup-email"
-                                value={userData.email}
-                            ></input>
+                                className={classes.input}
+                                autoComplete='on'
+                            />
                             
-                            <label htmlFor="username">Username:</label>
+                            <label htmlFor="username"  className={classes.inputLabel}>
+                                Username:
+                            </label>
                             <input
                                 onChange={handleInputChange} 
                                 type="text" 
                                 placeholder="Username" 
                                 name="username" 
                                 id="signup-username"
-                                value={userData.username}
-                            ></input>
+                                className={classes.input}
+                                autoComplete='on'
+                            />
 
-                            <label htmlFor="password">Password:</label>
+                            <label htmlFor="password"  className={classes.inputLabel}>
+                                Password:
+                            </label>
                             <input
                                 onChange={handleInputChange} 
-                                type="text" 
+                                type="password" 
                                 placeholder="Password" 
                                 name="password" 
                                 id="signup-password"
-                                value={userData.password}
-                            ></input>
+                                className={classes.input}
+                                autoComplete='on'
+                            />
                             
-                            <div className="button-div">
+                            <Box className={classes.buttonDiv}>
                                 <button 
                                     type="button" 
                                     onClick={() => {
                                         signupSubmit()
                                         setSignupModal(false)                                        
                                     }}
-                                >Signup</button>   
-                            </div>
+                                    className={classes.signupButton}
+                                >
+                                    <Typography className={classes.buttonText}>
+                                        Signup
+                                    </Typography>
+                                </button>   
+                            </Box>
                         </form>
-                    </div>
-                </div>
+                    </Box>
+                </Box>
             )}
         </>
     );
