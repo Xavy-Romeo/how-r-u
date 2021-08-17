@@ -58,7 +58,7 @@ export default function Anxious() {
   useEffect(() => bookResults(), []);
   
   return (
-    <Box style={{backgroundColor: 'rgb(240,240,240)'}}>
+    <Box className={classes.moodBackground}>
       <Container maxWidth='lg'>
         <Box className='App'>
           <Box className='anxiousDiv'>
@@ -75,21 +75,19 @@ export default function Anxious() {
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
                 </Typography>
-                  <Paper 
-                    style={{ height: 1750, width: '90%', margin: '0 2.5% 0 7.5%'}}
-                  >
+                  <Paper className={classes.meditationSection}>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: '100%' }}
+                        className={classes.sectionPic}
                         image={handMeditate}
                         title='hands in lap'
                       />
                       <CardMedia
+                        className={classes.comingSoon}
                         image={comingSoon}
-                        style={{ height: 150, width: '100%', backgroundColor: 'black', marginTop: '15px' }}
                         title='coming soon'
                       >
-                        <Typography variant='h4' style={{paddingTop: '15px', fontWeight: 'bold'}}>
+                        <Typography className={classes.soonApi} variant='h4'>
                           API
                         </Typography>
                       </CardMedia>
@@ -100,7 +98,7 @@ export default function Anxious() {
                     </Card>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: '100%' }}
+                        className={classes.sectionPic}
                         image={meditate}
                         title='sunset meditation'
                       />
@@ -110,7 +108,7 @@ export default function Anxious() {
                     </Card>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: '100%' }}
+                        className={classes.sectionPic}
                         image={selfLove}
                         title='self love'
                       />
@@ -124,21 +122,19 @@ export default function Anxious() {
                   <Typography variant='h3' className={classes.sectionTitle}>
                     Activities
                   </Typography>
-                  <Paper 
-                    style={{ height: 1750, width: '90%', margin: '0 5% 0 5%'}}
-                  >
+                  <Paper className={classes.activitiesSection}>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: '100%' }}
+                        className={classes.sectionPic}
                         image={beachStretch}
                         title='sunset yoga stretch'
                       />
                       <CardMedia
                         image={comingSoon}
-                        style={{ height: 150, width: '100%', backgroundColor: 'black', marginTop: '15px' }}
+                        className={classes.comingSoon}
                         title='coming soon'
                       >
-                        <Typography variant='h4' style={{paddingTop: '15px', fontWeight: 'bold'}}>
+                        <Typography className={classes.soonApi} variant='h4'>
                           API
                         </Typography>
                       </CardMedia>
@@ -149,7 +145,7 @@ export default function Anxious() {
                     </Card>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: '100%' }}
+                        className={classes.sectionPic}
                         image={run}
                         title='runner'
                       />
@@ -159,7 +155,7 @@ export default function Anxious() {
                     </Card>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: '100%' }}
+                        className={classes.sectionPic}
                         image={taiChi}
                         title='tai chi couple'
                       />
@@ -173,12 +169,10 @@ export default function Anxious() {
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Books
                 </Typography>
-                <Paper 
-                  style={{ height: 1750, width: '90%', margin: '0 7.5% 0 2.5%'}} 
-                >
+                <Paper className={classes.booksSection}>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: '100%' }}
+                      className={classes.sectionPic}
                       image={book}
                       title='book'
                     />

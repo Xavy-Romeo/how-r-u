@@ -18,9 +18,7 @@ export default function BookCards({ bookData }) {
         <>
             {bookData.map((book) => (
                 <Box key={book.title}>
-                    <Card 
-                        style={{backgroundColor: 'black', margin: '15px'}}
-                    >
+                    <Card className={classes.bookCard}>
                         <CardMedia
                             className={classes.bookImage}
                             image={book.image}
@@ -28,7 +26,7 @@ export default function BookCards({ bookData }) {
                         >             
                         </CardMedia>
                         
-                        <CardContent style={{color: 'white'}}>
+                        <CardContent>
                             <Typography className={classes.bookInfo} variant='h5' component='span'>
                                 Title:
                             </Typography>
@@ -43,7 +41,7 @@ export default function BookCards({ bookData }) {
                             </Typography>
                         </CardContent>
         
-                        <CardActions style={{display: 'flex', justifyContent: 'center'}}>
+                        <CardActions className={classes.bookButton}>
                             <Link
                                 href={book.link}
                                 target='_blank'

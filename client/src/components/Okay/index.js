@@ -59,7 +59,7 @@ export default function Okay() {
   useEffect(() => bookResults());
 
   return (
-    <Box style={{backgroundColor: 'rgb(240,240,240)'}}>
+    <Box className={classes.moodBackground}>
       <Container maxWidth='lg'>
         <Box className='App'>
           <Box className='okayDiv'>
@@ -76,21 +76,19 @@ export default function Okay() {
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
                 </Typography>
-                <Paper 
-                  style={{ height: 1750, width: '90%', margin: '0 2.5% 0 7.5%'}}
-                >
+                <Paper className={classes.meditationSection}>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: '100%' }}
+                      className={classes.sectionPic}
                       image={girlBook}
                       title='woman reading a book'
                     />
                     <CardMedia
                       image={comingSoon}
-                      style={{ height: 150, width: '100%', backgroundColor: 'black', marginTop: '15px' }}
+                      className={classes.comingSoon}
                       title='coming soon'
                     >
-                      <Typography variant='h4' style={{paddingTop: '15px', fontWeight: 'bold'}}>
+                      <Typography className={classes.soonApi} variant='h4'>
                         API
                       </Typography>
                     </CardMedia>
@@ -100,7 +98,7 @@ export default function Okay() {
                   </Card>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: '100%' }}
+                      className={classes.sectionPic}
                       image={meditate}
                       title='sunset meditation'
                     />
@@ -110,7 +108,7 @@ export default function Okay() {
                   </Card>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: '100%' }}
+                      className={classes.sectionPic}
                       image={violin}
                       title='violin'
                     />
@@ -124,21 +122,19 @@ export default function Okay() {
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Activities
                 </Typography>
-                <Paper 
-                  style={{ height: 1750, width: '90%', margin: '0 5% 0 5%'}}
-                >
+                <Paper className={classes.activitiesSection}>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: '100%' }}
+                      className={classes.sectionPic}
                       image={run}
                       title='runner'
                     />
                     <CardMedia
                       image={comingSoon}
-                      style={{ height: 150, width: '100%', backgroundColor: 'black', marginTop: '15px' }}
+                      className={classes.comingSoon}
                       title='coming soon'
                     >
-                      <Typography variant='h4' style={{paddingTop: '15px', fontWeight: 'bold'}}>
+                      <Typography className={classes.soonApi} variant='h4'>
                         API
                       </Typography>
                     </CardMedia>
@@ -148,7 +144,7 @@ export default function Okay() {
                   </Card>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: '100%' }}
+                      className={classes.sectionPic}
                       image={womanStretch}
                       title='woman in a yoga stretch'
                     />
@@ -158,7 +154,7 @@ export default function Okay() {
                   </Card>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: '100%' }}
+                      className={classes.sectionPic}
                       image={bicycle}
                       title='cyclist'
                     />
@@ -172,12 +168,10 @@ export default function Okay() {
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Books
                 </Typography>
-                <Paper 
-                  style={{ height: 1750, width: '90%', margin: '0 7.5% 0 2.5%'}} 
-                >
+                <Paper className={classes.booksSection}>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: '100%' }}
+                      className={classes.sectionPic}
                       image={book}
                       title='book'
                     />
