@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
@@ -55,34 +55,34 @@ export default function Happy() {
 
   return (
     <Box style={{backgroundColor: 'rgb(240,240,240)'}}>
-      <Container maxWidth="lg">
-        <Box className="App">
-          <Box className="happyDiv">
+      <Container maxWidth='lg'>
+        <Box className='App'>
+          <Box className='happyDiv'>
             
-            <Typography variant="h2" className={classes.sectionTitle}>
+            <Typography variant='h2' className={classes.sectionTitle}>
               Happy
             </Typography>
-            <Typography variant="h5" className={classes.subtitle}>
+            <Typography variant='h5' className={classes.subtitle}>
               Tools and Techniques to Keep you Moving!
             </Typography>
 
-            <Grid container justifyContent="center">
+            <Grid container justifyContent='center'>
               <Grid item xs={12} sm={4} m={3}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
                 </Typography>
                 <Paper 
-                  style={{ height: 1750, width: "90%", margin: '0 2.5% 0 7.5%'}}
+                  style={{ height: 1750, width: '90%', margin: '0 2.5% 0 7.5%'}}
                 >
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: "100%" }}
+                      style={{ height: 150, width: '100%' }}
                       image={meditationPeace}
                       title='meditation master'
                     />
                     <CardMedia
                       image={comingSoon}
-                      style={{ height: 150, width: "100%", backgroundColor: 'black', marginTop: '15px' }}
+                      style={{ height: 150, width: '100%', backgroundColor: 'black', marginTop: '15px' }}
                       title='coming soon'
                     >
                       <Typography variant='h4' style={{paddingTop: '15px', fontWeight: 'bold'}}>
@@ -90,32 +90,27 @@ export default function Happy() {
                       </Typography>
                     </CardMedia>
                     <CardContent>
-                      
-                      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/RqxVzWM8fLU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                      <iframe width='100%' height='300px' src='https://www.youtube.com/embed/RqxVzWM8fLU' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                     </CardContent>
                   </Card>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: "100%" }}
+                      style={{ height: 150, width: '100%' }}
                       image={stones}
                       title='stones'
                     />
                     <CardContent>
-                      
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/ZVmjNLqUkyI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                      
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/ZVmjNLqUkyI' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                     </CardContent>
                   </Card>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: "100%" }}
+                      style={{ height: 150, width: '100%' }}
                       image={happyCouple}
                       title='happy couple'
                     />
                     <CardContent>
-                      
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/62uqI43b7hc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                      
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/62uqI43b7hc' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                     </CardContent>
                   </Card>
                 </Paper>
@@ -126,17 +121,17 @@ export default function Happy() {
                   Activities
                 </Typography>
                 <Paper 
-                  style={{ height: 1750, width: "90%", margin: '0 5% 0 5%'}}
+                  style={{ height: 1750, width: '90%', margin: '0 5% 0 5%'}}
                 >
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: "100%" }}
+                      style={{ height: 150, width: '100%' }}
                       image={streetMarathon}
                       title=' many bikers in a marathon'
                     />
                     <CardMedia
                       image={comingSoon}
-                      style={{ height: 150, width: "100%", backgroundColor: 'black', marginTop: '15px' }}
+                      style={{ height: 150, width: '100%', backgroundColor: 'black', marginTop: '15px' }}
                       title='coming soon'
                     >
                       <Typography variant='h4' style={{paddingTop: '15px', fontWeight: 'bold'}}>
@@ -144,32 +139,28 @@ export default function Happy() {
                       </Typography>
                     </CardMedia>
                     <CardContent>
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/PHpnPMF_ZCs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/PHpnPMF_ZCs' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                     </CardContent>
                   </Card>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: "100%" }}
+                      style={{ height: 150, width: '100%' }}
                       image={yoga}
                       title='woman doing yoga'
                     />
 
                     <CardContent>
-                  
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/HlgmHxVXw7g" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                     
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/HlgmHxVXw7g' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                     </CardContent>
                   </Card>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: "100%" }}
+                      style={{ height: 150, width: '100%' }}
                       image={chi}
                       title='sunset chi'
                     />
                     <CardContent>
-                      
-                      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                      
+                      <iframe width='100%' height='300px' src='https://www.youtube.com/embed/NsZaY-EMpiA' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                     </CardContent>
                   </Card>
                 </Paper>
@@ -180,11 +171,11 @@ export default function Happy() {
                   Books
                 </Typography>
                 <Paper 
-                  style={{ height: 1750, width: "90%", margin: '0 7.5% 0 2.5%'}} 
+                  style={{ height: 1750, width: '90%', margin: '0 7.5% 0 2.5%'}} 
                 >
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: "100%" }}
+                      style={{ height: 150, width: '100%' }}
                       image={book}
                       title='book'
                     />

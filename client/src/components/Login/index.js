@@ -51,8 +51,8 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
             {!loginModal && !signupModal && (
                 <Button
                     onClick={() => {setLoginModal(true)}}
-                    variant="contained"
-                    color="primary"
+                    variant='contained'
+                    color='primary'
                     className={classes.button}
                 >
                     Login
@@ -71,39 +71,39 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
                                 Login
                             </Typography>
                             
-                            <label htmlFor="username">
+                            <label htmlFor='username'>
                                 <Typography  className={classes.inputLabel}>
                                     Username:
                                 </Typography>
                             </label>
                             <input
                                 onChange={handleInputChange} 
-                                type="text" 
-                                placeholder="Username" 
-                                name="username" 
-                                id="login-username"
+                                type='text' 
+                                placeholder='Username' 
+                                name='username' 
+                                id='login-username'
                                 className={classes.input}
                                 autoComplete='on'
                             />
 
-                            <label htmlFor="password">
+                            <label htmlFor='password'>
                                 <Typography  className={classes.inputLabel}>
                                     Password:
                                 </Typography>
                             </label>
                             <input
                                 onChange={handleInputChange} 
-                                type="password" 
-                                placeholder="Password" 
-                                name="password" 
-                                id="login-password"
+                                type='password' 
+                                placeholder='Password' 
+                                name='password' 
+                                id='login-password'
                                 className={classes.input}
                                 autoComplete='on'
                             />
 
                             <Box className={classes.buttonDiv}>
                                 <button 
-                                    type="button" 
+                                    type='button' 
                                     onClick={() => {
                                         loginSubmit()
                                         setLoginModal(false)
@@ -117,9 +117,7 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
                             </Box>
                         </form>
                     </Box>
-                    
-                </Box>
-                
+                </Box> 
             )}
         </>
     );

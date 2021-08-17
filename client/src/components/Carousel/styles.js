@@ -27,7 +27,7 @@ const useStyles = makeStyles({
         padding: '10px',
         backgroundColor: 'rgba(255,255,255, .5)',
         cursor: 'pointer',
-        zIndex: 9999,
+        zIndex: 999,
         '&:hover': {
             transform: 'scale(1.05)',
             backgroundColor: 'rgba(255,255,255,.7)',
@@ -43,7 +43,7 @@ const useStyles = makeStyles({
         padding: '10px',
         backgroundColor: 'rgba(255,255,255,.5)',
         cursor: 'pointer',
-        zIndex: 9999,
+        zIndex: 999,
         '&:hover': {
             transform: 'scale(1.05)',
             backgroundColor: 'rgba(255,255,255,.7)',
