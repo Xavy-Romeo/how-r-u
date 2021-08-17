@@ -39,7 +39,7 @@ export default function Header({ urlEndpoint, setUrlEndpoint }) {
               onClick={() => setUrlEndpoint('HOME')}
             > 
               <NavLink to='/'>
-                <img src={Logo} className={classes.logoHeader} />
+                <img src={Logo} className={classes.logoHeader} alt='logo' />
               </NavLink>
             </Box>
             
@@ -95,7 +95,7 @@ export default function Header({ urlEndpoint, setUrlEndpoint }) {
                   : (
                     <>
                       <Login 
-                        classes={classes}
+                        // classes={classes}
                         loginModal={loginModal}
                         setLoginModal={setLoginModal}
                         signupModal={signupModal}

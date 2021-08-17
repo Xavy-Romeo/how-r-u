@@ -9,6 +9,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from '@material-ui/core/Link';
+import Box from '@material-ui/core/Box';
 
 export default function BookCards({ bookData }) {
     const classes = useStyles();
@@ -16,7 +17,10 @@ export default function BookCards({ bookData }) {
     return (
         <>
             {bookData.map((book) => (
-                <Card style={{backgroundColor: 'black', margin: '15px'}}>
+                <Box key={book.title}>
+                <Card 
+                    style={{backgroundColor: 'black', margin: '15px'}}
+                >
                     <CardMedia
                         className={classes.bookImage}
                         image={book.image}
@@ -47,12 +51,13 @@ export default function BookCards({ bookData }) {
                             height='100%'
                             underline='none'
                         >
-                            <Button variant='outlined' variant='contained' color='primary'>
+                            <Button variant='contained' color='primary'>
                                 View Book
                             </Button>
                         </Link>            
                     </CardActions>
-                </Card>  
+                </Card>
+                </Box>  
             ))}
         </>
     );

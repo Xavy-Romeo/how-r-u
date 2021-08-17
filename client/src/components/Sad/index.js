@@ -57,7 +57,7 @@ export default function Sad() {
     }
   };
 
-  bookResults();
+  useEffect(() => bookResults());
 
   return (
     <Box style={{backgroundColor: 'rgb(240,240,240)'}}>
@@ -72,7 +72,7 @@ export default function Sad() {
               Tools and Techniques To Help You Find A New Way!
             </Typography>
 
-            <Grid container spacing={2} justify="center">
+            <Grid container spacing={2} justifyContent="center">
               <Grid item xs={12} sm={4} m={3}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
@@ -97,7 +97,7 @@ export default function Sad() {
                       </CardMedia>
                       <CardContent>
                       
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/86m4RC_ADEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/86m4RC_ADEY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -111,7 +111,7 @@ export default function Sad() {
                       </CardMedia>
                       <CardContent>
                        
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/bgs1rqr9UXA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/bgs1rqr9UXA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -125,7 +125,7 @@ export default function Sad() {
                       </CardMedia>
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/5rjtp2QLphE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/5rjtp2QLphE" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -155,7 +155,7 @@ export default function Sad() {
                       </CardMedia>
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                             
                       </CardContent>
                     </Card>
@@ -168,7 +168,7 @@ export default function Sad() {
 
                       <CardContent>
                        
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/PoOi81Wwf3M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/PoOi81Wwf3M" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -181,7 +181,7 @@ export default function Sad() {
 
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/ttr2ANenbOo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/ttr2ANenbOo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>

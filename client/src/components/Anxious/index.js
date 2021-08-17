@@ -56,7 +56,7 @@ export default function Anxious() {
     }
   };
 
-  useEffect(() => bookResults());
+  useEffect(() => bookResults(), []);
   
   return (
     <Box style={{backgroundColor: 'rgb(240,240,240)'}}>
@@ -71,7 +71,7 @@ export default function Anxious() {
               Tools and Techniques To Assist on your Path !
             </Typography>
 
-            <Grid container spacing={2} justify="center">
+            <Grid container spacing={2} justifyContent="center">
               <Grid item xs={12} sm={4} m={3}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
@@ -97,7 +97,7 @@ export default function Anxious() {
                       
                       <CardContent>
 
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/O-6f5wQXSu8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/O-6f5wQXSu8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
                       </CardContent>
                     </Card>
@@ -111,7 +111,7 @@ export default function Anxious() {
                       </CardMedia>
                       <CardContent>
                       
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/JLJqUipWRWk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/JLJqUipWRWk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                       
                       </CardContent>
                     </Card>
@@ -125,7 +125,7 @@ export default function Anxious() {
                       </CardMedia>
                       <CardContent>
                        
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/itZMM5gCboo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/itZMM5gCboo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     
                       </CardContent>
                     </Card>
@@ -156,7 +156,7 @@ export default function Anxious() {
                       
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/HlgmHxVXw7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/HlgmHxVXw7g" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -168,7 +168,7 @@ export default function Anxious() {
                       />
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/oSQrlzzuTa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/oSQrlzzuTa4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -182,7 +182,7 @@ export default function Anxious() {
                       </CardMedia>
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>

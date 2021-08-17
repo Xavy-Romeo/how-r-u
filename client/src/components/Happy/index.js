@@ -25,38 +25,33 @@ import CardContent from '@material-ui/core/CardContent';
 
 export default function Happy() {
   const classes = useStyles();
-  
-  const mood = 'Happy';
 
   const [bookSearchComplete, setBookSearchComplete] = useState(false);
   const [bookData, setBookData] = useState([{}]);
 
-  const bookResults = async () => {
+  useEffect(async() => {
     try {
-        const bookSearch = await searchGoogleBooks(mood);
+      const bookSearch = await searchGoogleBooks('Happy');
 
-        const { items } = await bookSearch.json();
-        
-        const bookArr = await items.slice(0, 3);
+      const { items } = await bookSearch.json();
+      
+      const bookArr = await items.slice(0, 3);
 
-        const bookInfo = await bookArr.map((book) => ({
-          authors: book.volumeInfo.authors || ['No author displayed'],
-          title: book.volumeInfo.title,
-          description: book.volumeInfo.description,
-          image: book.volumeInfo.imageLinks?.thumbnail || '',
-          link: book.volumeInfo.previewLink || ''
+      const bookInfo = await bookArr.map((book) => ({
+        authors: book.volumeInfo.authors || ['No author displayed'],
+        title: book.volumeInfo.title,
+        description: book.volumeInfo.description,
+        image: book.volumeInfo.imageLinks?.thumbnail || '',
+        link: book.volumeInfo.previewLink || ''
       }));
 
-        setBookData(bookInfo);  
-        setBookSearchComplete(true);
-              
+      setBookData(bookInfo);  
+      setBookSearchComplete(true);  
     }
     catch (err) {
         console.log(err);
     }
-  };
-
-  useEffect(() => bookResults());
+  });
 
   return (
     <Box style={{backgroundColor: 'rgb(240,240,240)'}}>
@@ -71,7 +66,7 @@ export default function Happy() {
               Tools and Techniques to Keep you Moving!
             </Typography>
 
-            <Grid container justify="center">
+            <Grid container justifyContent="center">
               <Grid item xs={12} sm={4} m={3}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
@@ -96,7 +91,7 @@ export default function Happy() {
                     </CardMedia>
                     <CardContent>
                       
-                      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/RqxVzWM8fLU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/RqxVzWM8fLU" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </CardContent>
                   </Card>
                   <Card>
@@ -107,7 +102,7 @@ export default function Happy() {
                     />
                     <CardContent>
                       
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/ZVmjNLqUkyI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/ZVmjNLqUkyI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                       
                     </CardContent>
                   </Card>
@@ -119,7 +114,7 @@ export default function Happy() {
                     />
                     <CardContent>
                       
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/62uqI43b7hc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/62uqI43b7hc" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                       
                     </CardContent>
                   </Card>
@@ -149,7 +144,7 @@ export default function Happy() {
                       </Typography>
                     </CardMedia>
                     <CardContent>
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/PHpnPMF_ZCs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/PHpnPMF_ZCs" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     </CardContent>
                   </Card>
                   <Card>
@@ -161,7 +156,7 @@ export default function Happy() {
 
                     <CardContent>
                   
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/HlgmHxVXw7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/HlgmHxVXw7g" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                      
                     </CardContent>
                   </Card>
@@ -173,7 +168,7 @@ export default function Happy() {
                     />
                     <CardContent>
                       
-                      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                      <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                       
                     </CardContent>
                   </Card>

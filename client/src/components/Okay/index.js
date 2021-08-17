@@ -71,7 +71,7 @@ export default function Okay() {
               Tools and Techniques to help Keep you Balanced!
             </Typography>
 
-            <Grid container spacing={2} justify="center">
+            <Grid container spacing={2} justifyContent="center">
               <Grid item xs={12} sm={4} m={3}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
@@ -96,7 +96,7 @@ export default function Okay() {
                       </CardMedia>
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/xkEKJV1FSiw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/xkEKJV1FSiw" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -109,7 +109,7 @@ export default function Okay() {
                       </CardMedia>
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/86m4RC_ADEY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/86m4RC_ADEY" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -123,7 +123,7 @@ export default function Okay() {
                       </CardMedia>
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/xB3G5-eA7hI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/xB3G5-eA7hI" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -153,7 +153,7 @@ export default function Okay() {
                       </CardMedia>
                       <CardContent>
                        
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/oSQrlzzuTa4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/oSQrlzzuTa4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -167,7 +167,7 @@ export default function Okay() {
                       </CardMedia>
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/BPK9WNtpBgk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/BPK9WNtpBgk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>
@@ -179,7 +179,7 @@ export default function Okay() {
                       />
                       <CardContent>
                         
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/YCZssRQgddk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/YCZssRQgddk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                         
                       </CardContent>
                     </Card>

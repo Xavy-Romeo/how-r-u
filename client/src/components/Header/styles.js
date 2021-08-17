@@ -28,7 +28,6 @@ const useStyles = makeStyles({
     },
     button: {
         marginRight: '1rem',
-
     },
     media: {
             height: 500,
