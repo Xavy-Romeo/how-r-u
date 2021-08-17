@@ -6,6 +6,8 @@ const useStyles = makeStyles({
         backgroundColor: 'lightgreen',
     },
     topHeader: {
+        position: 'relative',
+        display: 'flex',
         paddingTop: '2rem',
         paddingBottom: '2rem',
         marginBottom: '2rem',
@@ -41,7 +43,7 @@ const useStyles = makeStyles({
     },
     button: {
         marginRight: '1rem',
-    }
+    },
 });
 
 export default useStyles;

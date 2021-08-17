@@ -5,14 +5,14 @@ import { searchGoogleBooks } from '../../utils/Api';
 import useStyles from './styles';
 import '../../App.css';
 
-import handMeditate from '../../assets/Images/meditation-1794292_1280.jpg';
-import meditate from '../../assets/Images/sunset-691848_1280.jpg';
-import selfLove from '../../assets/Images/self-love-3969679_1280.jpg';
-import beachStretch from '../../assets/Images/beach-1835213_1920.jpg';
-import run from '../../assets/Images/run-1749410_1920.jpg';
-import taiChi from '../../assets/Images/kevin-olson-QXkoms0AnIo.jpg';
+import handMeditate from '../../assets/Images/hand-meditate.jpg';
+import meditate from '../../assets/Images/meditate.jpg';
+import selfLove from '../../assets/Images/self-love.jpg';
+import beachStretch from '../../assets/Images/beach.jpg';
+import run from '../../assets/Images/run.jpg';
+import taiChi from '../../assets/Images/tai-chi.jpg';
 import comingSoon from '../../assets/ComingSoon.png';
-import book from '../../assets/Images/book.jpg';
+import book from '../../assets/Images/book-heart.jpg';
 
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';

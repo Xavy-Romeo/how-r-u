@@ -5,12 +5,12 @@ import { searchGoogleBooks } from '../../utils/Api';
 import useStyles from './styles';
 import '../../App.css';
 
-import sad from '../../assets/Images/sad-505857_1280.jpg';
-import handMeditate from '../../assets/Images/meditation-1794292_1280.jpg';
-import headphones from '../../assets/Images/girl-791686_1280.jpg';
-import taiChi from '../../assets/Images/kevin-olson-QXkoms0AnIo.jpg';
-import boxing from '../../assets/Images/girl-3253532_1280.jpg';
-import hike from '../../assets/Images/adventure-1850178_1280.jpg';
+import sad from '../../assets/Images/sad1.jpg';
+import handMeditate from '../../assets/Images/hand-meditate.jpg';
+import headphones from '../../assets/Images/headphone.jpg';
+import taiChi from '../../assets/Images/tai-chi.jpg';
+import boxing from '../../assets/Images/boxing.jpg';
+import hike from '../../assets/Images/adventure.jpg';
 import comingSoon from '../../assets/ComingSoon.png';
 import book from '../../assets/Images/book.jpg';
 

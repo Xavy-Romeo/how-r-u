@@ -5,13 +5,13 @@ import { searchGoogleBooks } from '../../utils/Api';
 import useStyles from './styles';
 import '../../App.css';
 
-import girlBook from '../../assets/Images/girl-2604837_1920.jpg';
-import womanStretch from '../../assets/Images/people-2573216_1280.jpg';
-import violin from '../../assets/Images/violin-374096_1280.jpg';
-import run from '../../assets/Images/run-1749410_1920.jpg';
-import meditate from '../../assets/Images/sunset-691848_1280.jpg';
-import bicycle from '../../assets/Images/bicycle-384566_1920.jpg';
-import book from '../../assets/Images/book.jpg';
+import girlBook from '../../assets/Images/girl-reading.jpg';
+import womanStretch from '../../assets/Images/stretch.jpg';
+import violin from '../../assets/Images/violin.jpg';
+import run from '../../assets/Images/run.jpg';
+import meditate from '../../assets/Images/meditate.jpg';
+import bicycle from '../../assets/Images/bicycle.jpg';
+import book from '../../assets/Images/book-open.jpg';
 import comingSoon from '../../assets/ComingSoon.png';
 
 import Typography from '@material-ui/core/Typography';

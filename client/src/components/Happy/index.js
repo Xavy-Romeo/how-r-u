@@ -5,13 +5,13 @@ import { searchGoogleBooks } from '../../utils/Api';
 import useStyles from './styles';
 import '../../App.css';
 
-import meditationPeace from '../../assets/Images/buddhism-2214532_1280.jpg';
-import stones from '../../assets/Images/stones-2040340_1920.jpg';
-import happyCouple from '../../assets/Images/couple-1030744_1280.jpg';
-import streetMarathon from '../../assets/Images/street-marathon-1149220_1920.jpg';
-import yoga from '../../assets/Images/yoga-3053487_1280.jpg';
-import chi from '../../assets/Images/fu-3624167_1920.jpg';
-import book from '../../assets/Images/book.jpg';
+import meditationPeace from '../../assets/Images/buddhism.jpg';
+import stones from '../../assets/Images/stones.jpg';
+import happyCouple from '../../assets/Images/couple.jpg';
+import streetMarathon from '../../assets/Images/marathon.jpg';
+import yoga from '../../assets/Images/yoga.jpg';
+import chi from '../../assets/Images/fu.jpg';
+import book from '../../assets/Images/book-confetti.jpg';
 import comingSoon from '../../assets/ComingSoon.png';
 
 import Box from '@material-ui/core/Box';

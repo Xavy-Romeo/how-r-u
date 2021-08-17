@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 
 import logo_transparent from '../../assets/logo_transparent.png';
 import happy from '../../assets/happy.jpg';
 import okay from '../../assets/okay.jpg';
 import anxious from '../../assets/anxious.jpg';
 import sad from '../../assets/sad.jpg';
+import Carousel from '../Carousel';
 
 import Tools from '../Tools';
 import useStyles from './styles';  
@@ -95,18 +97,20 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
         <>    
             <Box className={classes.blankTopHeader}></Box>
             {urlEndpoint === 'HOME'
-            ?   <Box
-                    display='flex'
-                    flexWrap='wrap'
-                    justifyContent='space-between'
-                    className={classes.topHeader}
-                >
-                    <Box>
-                        <NavLink to='/'>
-                            <img width='400' height='400' src={logo_transparent} alt='logo' />
-                        </NavLink>
+            ?   <>
+                    <Box
+                        className={classes.topHeader}
+                    >
+                        <Grid container direction='row'>
+                            <Grid item xs={3}>
+                                <img width='400' height='400' src={logo_transparent} alt='logo' />
+                            </Grid>
+                            <Grid item xs={8}>
+                                <Carousel autoPlay={4}/>
+                            </Grid>
+                        </Grid>
                     </Box>
-                </Box>
+                </>
             : null
             }
             <Box
