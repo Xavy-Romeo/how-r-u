@@ -72,12 +72,7 @@ export default function Header({ urlEndpoint, setUrlEndpoint }) {
                       color='primary'
                       className={classes.button}
                     >
-                      
-                        
-                          HOME
-                        
-                      
-                      
+                      HOME
                     </Button>
                   </NavLink>
                 )}
@@ -95,13 +90,11 @@ export default function Header({ urlEndpoint, setUrlEndpoint }) {
                   : (
                     <>
                       <Login 
-                        // classes={classes}
                         loginModal={loginModal}
                         setLoginModal={setLoginModal}
                         signupModal={signupModal}
                       />
                       <Signup
-                        classes={classes}
                         signupModal={signupModal}
                         setSignupModal={setSignupModal}
                         loginModal={loginModal}
@@ -111,13 +104,7 @@ export default function Header({ urlEndpoint, setUrlEndpoint }) {
                 }  
               </Grid>
             </Grid>
-            
-            
-              
-            
-              
           </Toolbar>
-          
         </AppBar>  
     </>
   );

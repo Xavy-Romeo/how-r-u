@@ -11,6 +11,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import Content from './components/Content';
 import Header from "./components/Header";
+import Footer from './components/Footer';
 import Happy from "./components/Happy";
 import Okay from "./components/Okay";
 import Anxious from "./components/Anxious";
@@ -64,6 +65,10 @@ function App() {
               <Sad />
             </Route>
           </Switch>
+          <Footer
+            urlEndpoint={urlEndpoint}
+            setUrlEndpoint={setUrlEndpoint}
+          />
       </Router>
     </ApolloProvider>
   );
