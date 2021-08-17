@@ -216,7 +216,6 @@ export default function Happy() {
           </Box>
         </Box>
       </Container>
-      )
     </Box>
   );
 }
