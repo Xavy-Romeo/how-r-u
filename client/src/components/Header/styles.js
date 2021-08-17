@@ -15,7 +15,7 @@ const useStyles = makeStyles({
         marginRight: '15px',
         '&:hover': {
             transform: 'scale(1.2)'
-        }
+        },
     },
     navLinks: {
         background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
@@ -25,6 +25,13 @@ const useStyles = makeStyles({
         color: 'white',
         height: 48,
         padding: '0 30px',
+    },
+    buttonsDiv: {
+        display: 'flex',
+        justifyContent:'flex-end',
+        '@media (max-width:599px)': {
+            justifyContent:'flex-start'
+        },
     },
     button: {
         marginRight: '1rem',
@@ -37,7 +44,16 @@ const useStyles = makeStyles({
         marginRight: '20px',
         fontWeight: 'bold',
         textShadow: '1px 1px 1px white',
-        color: 'rgb(36, 8, 88)'
+        color: 'rgb(36, 8, 88)',
+        '@media (max-width:1279px)': {
+            fontSize: '36px'
+        },
+        '@media (max-width:959px)': {
+            fontSize: '28px'
+        },
+        '@media (max-width:700px)': {
+            fontSize: '22px'
+        }
     },
     homeButton: {
         textDecoration: 'none',
