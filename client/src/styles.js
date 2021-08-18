@@ -10,6 +10,9 @@ const useStyles = makeStyles({
         justifyContent: 'center',
         margin: '15px auto',
         textShadow: '1px 1px 1px black',
+        '@media (max-width:959px)': {
+            fontSize: '40px'
+        },
     },
     meditationSection: {
         height: '1825px', 

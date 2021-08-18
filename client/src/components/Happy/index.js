@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
-import useStyles from './styles';
+import useStyles from '../../styles';
 import '../../App.css';
 
 import meditationPeace from '../../assets/Images/buddhism.jpg';
@@ -67,7 +67,7 @@ export default function Happy() {
             </Typography>
 
             <Grid container justifyContent='center'>
-              <Grid item xs={12} sm={4} m={3}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
                 </Typography>
@@ -114,7 +114,7 @@ export default function Happy() {
                 </Paper>
               </Grid>
               
-              <Grid item xs={12} sm={4} m={3}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Activities
                 </Typography>
@@ -162,7 +162,7 @@ export default function Happy() {
                 </Paper>
               </Grid>
               
-              <Grid item xs={12} sm={4} m={3}>
+              <Grid item xs={12} sm={6} md={4}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Books
                 </Typography>

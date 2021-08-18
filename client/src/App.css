@@ -1,6 +1,5 @@
 .happyDiv{
   background-color:yellow;
-  height: 2100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,7 +11,6 @@
 
 .anxiousDiv{
   background-color:rgba(228, 28, 28, 0.678);
-  height: 2100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -24,7 +22,6 @@
 
 .okayDiv{
   background-color:rgba(134, 223, 32, 0.705);
-  height: 2100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +33,6 @@
 
 .sadDiv{
   background-color:rgba(71, 6, 26, 0.671);
-  height: 2100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
