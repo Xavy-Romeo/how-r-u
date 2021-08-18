@@ -23,21 +23,21 @@ export default function Footer({ urlEndpoint, setUrlEndpoint }) {
                 }`}
             > 
                 <Grid container justifyContent='space-between' alignItems='center'>
-                    <Grid item>
-                    <Box
-                        onClick={() => setUrlEndpoint('HOME')}
-                        > 
-                        <NavLink to='/'>
-                            <img src={Logo} className={classes.logoFooter} alt='logo' />
-                        </NavLink>
-                    </Box>
+                    <Grid item className={classes.logoFootCont}>
+                        <Box
+                            onClick={() => setUrlEndpoint('HOME')}
+                            > 
+                            <NavLink to='/'>
+                                <img src={Logo} className={classes.logoFooter} alt='logo' />
+                            </NavLink>
+                        </Box>
                     </Grid>
                     <Grid item>
                         <Typography className={`${classes.footerText} suicideLine`} variant='h4'>
                             Suicide Hotline: 800-273-8255
                         </Typography>
                     </Grid>
-                    <Grid item>
+                    <Grid item className={classes.footerCopy}>
                         <Typography className={classes.footerText} variant='h5'>
                             &copy; {new Date().getFullYear()}
                         </Typography>
