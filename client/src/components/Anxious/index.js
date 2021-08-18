@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 
 import Books from '../Books';
 import { searchGoogleBooks } from '../../utils/Api';
-import useStyles from './styles';
+import useStyles from '../../styles';
 import '../../App.css';
 
 import handMeditate from '../../assets/Images/hand-meditate.jpg';
@@ -33,23 +33,22 @@ export default function Anxious() {
 
   const bookResults = async () => {
     try {
-        const bookSearch = await searchGoogleBooks(mood);
+      const bookSearch = await searchGoogleBooks(mood);
 
-        const { items } = await bookSearch.json();
-        
-        const bookArr = await items.slice(0, 3);
+      const { items } = await bookSearch.json();
+      
+      const bookArr = await items.slice(0, 3);
 
-        const bookInfo = await bookArr.map((book) => ({
-          authors: book.volumeInfo.authors || ['No author displayed'],
-          title: book.volumeInfo.title,
-          description: book.volumeInfo.description,
-          image: book.volumeInfo.imageLinks?.thumbnail || '',
-          link: book.volumeInfo.previewLink || ''
+      const bookInfo = await bookArr.map((book) => ({
+        authors: book.volumeInfo.authors || ['No author displayed'],
+        title: book.volumeInfo.title,
+        description: book.volumeInfo.description,
+        image: book.volumeInfo.imageLinks?.thumbnail || '',
+        link: book.volumeInfo.previewLink || ''
       }));
 
-        setBookData(bookInfo);  
-        setBookSearchComplete(true);
-              
+      setBookData(bookInfo);  
+      setBookSearchComplete(true);       
     }
     catch (err) {
         console.log(err);
@@ -59,145 +58,121 @@ export default function Anxious() {
   useEffect(() => bookResults(), []);
   
   return (
-    <Box style={{backgroundColor: 'rgb(240,240,240)'}}>
-      <Container maxWidth="lg">
-        <Box className="App">
-          <Box className="anxiousDiv">
+    <Box className={classes.moodBackground}>
+      <Container maxWidth='lg'>
+        <Box className='App'>
+          <Box className='anxiousDiv'>
 
-            <Typography variant="h2" className={classes.sectionTitle}>
+            <Typography variant='h2' className={classes.sectionTitle}>
               Anxious
             </Typography>
-            <Typography variant="h5" className={classes.subtitle}>
+            <Typography variant='h5' className={classes.subtitle}>
               Tools and Techniques To Assist on your Path !
             </Typography>
 
-            <Grid container spacing={2} justifyContent="center">
-              <Grid item xs={12} sm={4} m={3}>
+            <Grid container spacing={2} justifyContent='center'>
+              <Grid item xs={12} sm={6} md={4}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Meditation
                 </Typography>
-                  <Paper 
-                    style={{ height: 1750, width: "90%", margin: '0 2.5% 0 7.5%'}}
-                  >
+                  <Paper className={classes.meditationSection}>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: "100%" }}
+                        className={classes.sectionPic}
                         image={handMeditate}
                         title='hands in lap'
                       />
                       <CardMedia
+                        className={classes.comingSoon}
                         image={comingSoon}
-                        style={{ height: 150, width: "100%", backgroundColor: 'black', marginTop: '15px' }}
                         title='coming soon'
                       >
-                        <Typography variant='h4' style={{paddingTop: '15px', fontWeight: 'bold'}}>
+                        <Typography className={classes.soonApi} variant='h4'>
                           API
                         </Typography>
                       </CardMedia>
                       
                       <CardContent>
-
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/O-6f5wQXSu8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/O-6f5wQXSu8' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                       </CardContent>
                     </Card>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: "100%" }}
+                        className={classes.sectionPic}
                         image={meditate}
                         title='sunset meditation'
-                      >
-
-                      </CardMedia>
-                      <CardContent>
-                      
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/JLJqUipWRWk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                      
+                      />
+                      <CardContent>            
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/JLJqUipWRWk' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>                      
                       </CardContent>
                     </Card>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: "100%" }}
+                        className={classes.sectionPic}
                         image={selfLove}
                         title='self love'
-                      >
-
-                      </CardMedia>
-                      <CardContent>
-                       
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/itZMM5gCboo" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                    
+                      />
+                      <CardContent> 
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/itZMM5gCboo' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                       </CardContent>
                     </Card>
                   </Paper>
                 </Grid>
-                <Grid item xs={12} sm={4} m={3}>
-                <Typography variant='h3' className={classes.sectionTitle}>
-                  Activities
-                </Typography>
-                <Paper 
-                    style={{ height: 1750, width: "90%", margin: '0 5% 0 5%'}}
-                  >
+                <Grid item xs={12} sm={6} md={4}>
+                  <Typography variant='h3' className={classes.sectionTitle}>
+                    Activities
+                  </Typography>
+                  <Paper className={classes.activitiesSection}>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: "100%" }}
+                        className={classes.sectionPic}
                         image={beachStretch}
                         title='sunset yoga stretch'
                       />
                       <CardMedia
                         image={comingSoon}
-                        style={{ height: 150, width: "100%", backgroundColor: 'black', marginTop: '15px' }}
+                        className={classes.comingSoon}
                         title='coming soon'
                       >
-                        <Typography variant='h4' style={{paddingTop: '15px', fontWeight: 'bold'}}>
+                        <Typography className={classes.soonApi} variant='h4'>
                           API
                         </Typography>
                       </CardMedia>
                       
                       <CardContent>
-                        
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/HlgmHxVXw7g" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/HlgmHxVXw7g' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>  
                       </CardContent>
                     </Card>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: "100%" }}
+                        className={classes.sectionPic}
                         image={run}
                         title='runner'
                       />
-                      <CardContent>
-                        
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/oSQrlzzuTa4" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        
+                      <CardContent>  
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/oSQrlzzuTa4' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>                        
                       </CardContent>
                     </Card>
                     <Card>
                       <CardMedia
-                        style={{ height: 150, width: "100%" }}
+                        className={classes.sectionPic}
                         image={taiChi}
                         title='tai chi couple'
-                      >
-
-                      </CardMedia>
+                      />
                       <CardContent>
-                        
-                        <iframe width="100%" height="300px" src="https://www.youtube.com/embed/NsZaY-EMpiA" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-                        
+                        <iframe width='100%' height='300px' src='https://www.youtube.com/embed/NsZaY-EMpiA' title='YouTube video player' frameBorder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
                       </CardContent>
                     </Card>
                   </Paper>
                 </Grid>
-              <Grid item xs={12} sm={4} m={3}>
+                <Grid item xs={12} sm={6} md={4}>
                 <Typography variant='h3' className={classes.sectionTitle}>
                   Books
                 </Typography>
-                <Paper 
-                  style={{ height: 1750, width: "90%", margin: '0 7.5% 0 2.5%'}} 
-                >
+                <Paper className={classes.booksSection}>
                   <Card>
                     <CardMedia
-                      style={{ height: 150, width: "100%" }}
+                      className={classes.sectionPic}
                       image={book}
                       title='book'
                     />
@@ -221,7 +196,6 @@ export default function Anxious() {
                         ></Books>
                       )
                   }
-                  
                 </Paper>
               </Grid>
             </Grid>

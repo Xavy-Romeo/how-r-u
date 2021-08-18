@@ -1,61 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 
 import logo_transparent from '../../assets/logo_transparent.png';
-import happy from '../../assets/happy.jpg';
-import okay from '../../assets/okay.jpg';
-import anxious from '../../assets/anxious.jpg';
-import sad from '../../assets/sad.jpg';
 import Carousel from '../Carousel';
 
-import Tools from '../Tools';
+import Info from '../Info';
 import useStyles from './styles';  
-
-const meditation = [
-    {
-        mydata:
-            'Meditation — is the habitual process of training your mind to focus and redirect your thoughts. The popularity of meditation is increasing as more people discover its many health benefits.',
-    
-        meditation:
-            'You can use it to increase awareness of yourself and your surroundings. Many people think of it as a way to reduce stress and develop concentration.',
-    
-        whyMeditation:
-            ' People also use the practice to develop other beneficial habits and feelings, such as a positive mood and outlook, self-discipline, healthy sleep patterns, and even increased pain tolerance.',
-        Mindfulness: 'Meditation/Music'
-    },
-];
-  
-const activities = [
-    {
-        mydata:
-            'Activities — such as walking, stretching or jogging — that involve repetitive movements of large muscle groups can be particularly stress relieving.',
-    
-        activities:
-            'Exercise is one of the most important things you can do to combat stress. It might seem contradictory, but putting physical stress on your body through exercise can relieve mental stress.',
-    
-        whyActivities:
-            'The benefits are strongest when you exercise regularly. People who exercise regularly are less likely to experience anxiety than those who don’t exercise',
-        Mindfulness: 'Actvities'
-    },
-];
-  
-const books = [
-    {
-        mydata:
-            ' Books — Prioritizing mental health is especially important these days. Reading helps to ground yourself and cut down on your anxiety.',
-    
-        books:
-            ' Books rooted in mindfulness are a great place to start.',
-    
-        whyBooks:
-            ' Reading can invite you to think in new ways, expand your imagination, deepen your empathy, help you temporarily escape reality, and increase your knowledge and awareness of others.',
-        
-        Mindfulness: 'Books'
-    },
-];
+import { meditation, activities, books } from './dataInfo';
+import EmotionBar from '../EmotionBar';
  
 export default function Content({ urlEndpoint, setUrlEndpoint }) {  
     const classes = useStyles();
@@ -102,136 +57,71 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                         className={classes.topHeader}
                     >
                         <Grid container direction='row'>
-                            <Grid item xs={3}>
-                                <img width='400' height='400' src={logo_transparent} alt='logo' />
+                            <Grid item xs={12} lg={3}>
+                                <img src={logo_transparent} className={classes.logoSubHeader} alt='logo' />
                             </Grid>
-                            <Grid item xs={8}>
-                                <Carousel autoPlay={4}/>
+                            <Grid item xs={12} lg={8}>
+                                <Grid container  style={{ minWidth: '100%'}}>
+                                    <Grid item xs={1} xl={0}></Grid>
+                                    <Grid item xs={10} xl={12}>
+                                        <Carousel autoPlay={4} style={{minWidth: '100%'}} />    
+                                    </Grid>
+                                    <Grid item xs={1} xl={0}></Grid>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Box>
                 </>
             : null
             }
-            <Box
-                display='flex'
-                flexWrap='nowrap'
-                justifyContent='space-around'
-                className={classes.emotions}
-            >
-                <Box className={classes.moodContainer}>
-                    <NavLink to='/happy'>
-                        <img
-                            className={classes.imgStyle}
-                            width='200'
-                            height='200'
-                            src={happy}
-                            alt='Happy'
-                        />
-                        
-                    </NavLink>
-                    <span className={classes.span}>Happy</span>
-                </Box>
-                <Box className={classes.moodContainer}>
-                    <NavLink to='/okay'>
-                        <img
-                            className={classes.imgStyle}
-                            width='200'
-                            height='200'
-                            src={okay}
-                            alt='Okay'
-                        />
-                        </NavLink>
-                    <span className={classes.span}>Okay</span>
-                </Box>
-                <Box className={classes.moodContainer}>
-                    <NavLink to='/anxious'>
-                        <img
-                            className={classes.imgStyle}
-                            width='200'
-                            height='200'
-                            src={anxious}
-                            alt='Anxious'
-                        />
-                    </NavLink>
-                    <span className={classes.span}>Anxious</span>
-                </Box>
-                <Box className={classes.moodContainer}>
-                    <NavLink to='/sad'>
-                        <img
-                            className={classes.imgStyle}
-                            width='200'
-                            height='200'
-                            src={sad}
-                            alt='Sad'
-                        />
-                        </NavLink>
-                    <span className={classes.span}>Sad</span>
-                </Box>
-            </Box>
+            
+            <EmotionBar />
+
             {urlEndpoint === 'HOME'
-                ?   <Box
-                        display='flex'
-                        flexWrap='nowrap'
-                        justifyContent='space-around'
-                        className={classes.topHeader}
-                    >
-                        <Box
-                            display='flex'
-                            flexWrap='nowrap'
-                            justifyContent='space-around'
-                            className={classes.topHeader}
-                        >
+                ?   <Grid container className={classes.infoContainer}>
+                        <Grid item className={classes.infoContainer} xs={12} sm={5} md={4}>
                             {meditation.map((item, idx) => {
                                 return (
-                                    <Tools
+                                    <Info
                                         key={idx}
                                         mydata={item.mydata}
                                         meditation={item.meditation}
                                         whyMeditation={item.whyMeditation}
                                         Mindfulness={item.Mindfulness}
+                                        initial={'M'}
                                     />
                                 );
                             })}
-                        </Box>
-                        <Box
-                            display='flex'
-                            flexWrap='nowrap'
-                            justifyContent='space-around'
-                            className={classes.topHeader}
-                        >
+                        </Grid>
+                        <Grid item className={classes.infoContainer} xs={12} sm={5} md={4}>
                             {activities.map((item, idx) => {
                                 return (
-                                    <Tools
+                                    <Info
                                         key={idx}
                                         mydata={item.mydata}
                                         activities={item.activities}
                                         whyActivities={item.whyActivities}
                                         Mindfulness={item.Mindfulness}
+                                        initial={'A'}
                                     />
                                 );
                             })}
-                        </Box>
-                        <Box
-                            display='flex'
-                            flexWrap='nowrap'
-                            justifyContent='space-around'
-                            className={classes.topHeader}
-                        >
+                        </Grid>
+                        <Grid item className={classes.infoContainer} xs={12} sm={5} md={4}>
                             {books.map((item, idx) => {
                                 return (
-                                    <Tools
+                                    <Info
                                         key={idx}
                                         mydata={item.mydata}
                                         books={item.books}
                                         whyBooks={item.whyBooks}
                                         Mindfulness={item.Mindfulness}
-                                        
+                                        initial={'B'}
                                     />
                                 );
                             })}
-                        </Box>
-                    </Box>
+                        </Grid>
+                    </Grid>
                 : null
             }
         </>

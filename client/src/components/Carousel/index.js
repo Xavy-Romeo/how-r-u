@@ -44,7 +44,7 @@ export default function Carousel(props) {
     }, [props.autoPlay]);
 
     return (
-        <>  
+        <Box className={classes.carouselContainer}>  
             <ArrowBackIosSharpIcon 
                 onClick={() => prevPic()}
                 className={classes.arrowLeft} 
@@ -74,7 +74,7 @@ export default function Carousel(props) {
                 className={classes.arrowRight} 
                 fontSize='large' 
             />
-        </>
+        </Box>
     );
 };
 
