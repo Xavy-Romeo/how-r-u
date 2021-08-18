@@ -44,7 +44,7 @@ export default function Tools({ mydata, meditation, whyMeditation, activities, w
             </IconButton>
           }
           title={
-            <Typography variant='h5'>
+            <Typography className={classes.infoTitle} variant='h5'>
               {Mindfulness}
             </Typography>
           }

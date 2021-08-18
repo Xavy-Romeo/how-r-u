@@ -78,8 +78,8 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
             <EmotionBar />
 
             {urlEndpoint === 'HOME'
-                ?   <Box className={classes.infoContainer}>
-                        <Box className={classes.infoContainer}>
+                ?   <Grid container className={classes.infoContainer}>
+                        <Grid item className={classes.infoContainer} xs={12} sm={5} md={4}>
                             {meditation.map((item, idx) => {
                                 return (
                                     <Info
@@ -92,8 +92,8 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                                     />
                                 );
                             })}
-                        </Box>
-                        <Box className={classes.infoContainer}>
+                        </Grid>
+                        <Grid item className={classes.infoContainer} xs={12} sm={5} md={4}>
                             {activities.map((item, idx) => {
                                 return (
                                     <Info
@@ -106,8 +106,8 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                                     />
                                 );
                             })}
-                        </Box>
-                        <Box className={classes.infoContainer}>
+                        </Grid>
+                        <Grid item className={classes.infoContainer} xs={12} sm={5} md={4}>
                             {books.map((item, idx) => {
                                 return (
                                     <Info
@@ -120,8 +120,8 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                                     />
                                 );
                             })}
-                        </Box>
-                    </Box>
+                        </Grid>
+                    </Grid>
                 : null
             }
         </>

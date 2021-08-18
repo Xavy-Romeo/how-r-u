@@ -37,13 +37,16 @@ const useStyles = makeStyles({
     infoContainer: {
         position: 'relative',
         display: 'flex',
-        flexWrap: 'nowrap',
+        // flexWrap: 'nowrap',
         justifyContent: 'space-around',
         paddingTop: '2rem',
         paddingBottom: '2rem',
         marginBottom: '2rem',
-        backgroundColor: 'orange',
-                        
+        backgroundColor: 'orange', 
+        '@media (max-width:1279px)': {
+            justifyContent: 'center',
+            margin: '0 auto'
+        },            
     }
 });
 

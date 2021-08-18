@@ -2,6 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
 
 import happy from '../../assets/happy.jpg';
 import okay from '../../assets/okay.jpg';
@@ -13,18 +14,11 @@ export default function EmotionBar() {
     const classes = useStyles();
     
     return (
-        <Box
-            display='flex'
-            flexWrap='nowrap'
-            justifyContent='space-around'
-            className={classes.emotions}
-        >
+        <Grid container className={classes.emotions} justifyContent='space-around'>
             <Box className={classes.moodContainer}>
                 <NavLink to='/happy'>
                     <img
                         className={classes.imgStyle}
-                        width='200'
-                        height='200'
                         src={happy}
                         alt='Happy'
                     />
@@ -36,8 +30,6 @@ export default function EmotionBar() {
                 <NavLink to='/okay'>
                     <img
                         className={classes.imgStyle}
-                        width='200'
-                        height='200'
                         src={okay}
                         alt='Okay'
                     />
@@ -48,8 +40,6 @@ export default function EmotionBar() {
                 <NavLink to='/anxious'>
                     <img
                         className={classes.imgStyle}
-                        width='200'
-                        height='200'
                         src={anxious}
                         alt='Anxious'
                     />
@@ -60,14 +50,12 @@ export default function EmotionBar() {
                 <NavLink to='/sad'>
                     <img
                         className={classes.imgStyle}
-                        width='200'
-                        height='200'
                         src={sad}
                         alt='Sad'
                     />
                     </NavLink>
                 <span className={classes.span}>Sad</span>
             </Box>
-        </Box>
+        </Grid>
     );
 };

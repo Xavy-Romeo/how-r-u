@@ -11,6 +11,9 @@ const useStyles = makeStyles({
         padding: '5px',
         backgroundColor: '#65AC8D',
         border: '7px solid black',
+        '@media (min-width:2800px)': {
+            height: '500px',
+        },
         '@media (max-width:959px)': {
             marginLeft: '-2%',
             height: '300px',
