@@ -36,9 +36,6 @@ export const useStyles = makeStyles((theme) => ({
     '@media (max-width:959px)': {
       fontSize: '16px'
     },
-    // '@media (max-width:740px)': {
-    //   fontSize: '14px'
-    // },
   },
   expand: {
     transform: 'rotate(0deg)',

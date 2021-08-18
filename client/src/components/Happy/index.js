@@ -29,29 +29,33 @@ export default function Happy() {
   const [bookSearchComplete, setBookSearchComplete] = useState(false);
   const [bookData, setBookData] = useState([{}]);
 
-  useEffect(async() => {
-    try {
-      const bookSearch = await searchGoogleBooks('Happy');
+  useEffect(() => {
+    async function searchBook() {
+      try {
+        const bookSearch = await searchGoogleBooks('Happy');
+  
+        const { items } = await bookSearch.json();
+        
+        const bookArr = await items.slice(0, 3);
+  
+        const bookInfo = await bookArr.map((book) => ({
+          authors: book.volumeInfo.authors || ['No author displayed'],
+          title: book.volumeInfo.title,
+          description: book.volumeInfo.description,
+          image: book.volumeInfo.imageLinks?.thumbnail || '',
+          link: book.volumeInfo.previewLink || ''
+        }));
+  
+        setBookData(bookInfo);  
+        setBookSearchComplete(true);  
+      }
+      catch (err) {
+          console.log(err);
+      }
+    };
 
-      const { items } = await bookSearch.json();
-      
-      const bookArr = await items.slice(0, 3);
-
-      const bookInfo = await bookArr.map((book) => ({
-        authors: book.volumeInfo.authors || ['No author displayed'],
-        title: book.volumeInfo.title,
-        description: book.volumeInfo.description,
-        image: book.volumeInfo.imageLinks?.thumbnail || '',
-        link: book.volumeInfo.previewLink || ''
-      }));
-
-      setBookData(bookInfo);  
-      setBookSearchComplete(true);  
-    }
-    catch (err) {
-        console.log(err);
-    }
-  });
+    searchBook();
+  }, []);
 
   return (
     <Box className={classes.moodBackground}>

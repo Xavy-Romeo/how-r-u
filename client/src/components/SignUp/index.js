@@ -16,31 +16,42 @@ export default function Signup({ signupModal, setSignupModal, loginModal }) {
        firstName: '', lastName: '', email: '', username: '', password: '' 
     });
 
-    const [addUser] = useMutation(ADD_USER);
+    const [addUser, { error }] = useMutation(ADD_USER);
 
     const handleInputChange = (event) => {
-        const { name, value } = event.target;
-        setUserData({ ...userData, [name]: value });
+        let { name, value } = event.target;
+        
+        if (name === 'firstName') {
+            let first = value.charAt(0).toUpperCase() + value.slice(1).toLowerCase();
+            
+            setUserData({ ...userData, firstName: first });
+        }
+        else {
+            setUserData({ ...userData, [name]: value });
+        }
     };
 
     const signupSubmit = async () => {
         try {
             const { data } = await addUser({
               variables: { ...userData }
-            })
+            });
+
             Auth.login(data.addUser.token);
+
+            if (data.addUser.token) {
+                setUserData({
+                    firstName: '', 
+                    lastName: '', 
+                    email: '', 
+                    username: '', 
+                    password: ''
+                });
+            }
         }
         catch (err) {
             console.error(err);
         }
-
-        setUserData({
-            firstName: '', 
-            lastName: '', 
-            email: '', 
-            username: '', 
-            password: ''
-        });
     };
 
     if (signupModal) {
@@ -70,7 +81,10 @@ export default function Signup({ signupModal, setSignupModal, loginModal }) {
                         onClick={() => {setSignupModal(false)}}
                     />
                     <Box className={classes.signupContainer}>
-                        <form className={classes.signupForm}> 
+                        <form
+                            className={classes.signupForm}
+                            onSubmit={e => e.preventDefault()}
+                        > 
                             <Typography className={classes.signupTitle}>
                                 Signup
                             </Typography>
@@ -88,6 +102,9 @@ export default function Signup({ signupModal, setSignupModal, loginModal }) {
                                         id='signup-first-name'
                                         className={classes.input}
                                         autoComplete='on'
+                                        required
+                                        pattern='[A-Za-z]+'
+                                        title='Please only enter letters.'
                                     />
                                 </Box>    
                                 
@@ -103,6 +120,9 @@ export default function Signup({ signupModal, setSignupModal, loginModal }) {
                                         id='signup-last-name'
                                         className={classes.input}
                                         autoComplete='on'
+                                        required
+                                        pattern='[A-Za-z]+'
+                                        title='Please only enter letters.'
                                     />
                                 </Box>
                             </Box>
@@ -118,6 +138,9 @@ export default function Signup({ signupModal, setSignupModal, loginModal }) {
                                 id='signup-email'
                                 className={classes.input}
                                 autoComplete='on'
+                                required
+                                pattern='\S+@\S+\.\S+'
+                                title='Please enter a valid email address.'
                             />
                             
                             <label htmlFor='username'  className={classes.inputLabel}>
@@ -131,6 +154,7 @@ export default function Signup({ signupModal, setSignupModal, loginModal }) {
                                 id='signup-username'
                                 className={classes.input}
                                 autoComplete='on'
+                                required
                             />
 
                             <label htmlFor='password'  className={classes.inputLabel}>
@@ -144,14 +168,15 @@ export default function Signup({ signupModal, setSignupModal, loginModal }) {
                                 id='signup-password'
                                 className={classes.input}
                                 autoComplete='on'
+                                required
+                                minLength='8'
                             />
                             
                             <Box className={classes.buttonDiv}>
-                                <button 
-                                    type='button' 
+                                <button
+                                    type='submit'
                                     onClick={() => {
                                         signupSubmit()
-                                        setSignupModal(false)                                        
                                     }}
                                     className={classes.signupButton}
                                 >
@@ -161,6 +186,11 @@ export default function Signup({ signupModal, setSignupModal, loginModal }) {
                                 </button>   
                             </Box>
                         </form>
+                        {error && 
+                            <Typography className={classes.signupError} variant='h5'>
+                                Signup failed
+                            </Typography>
+                        }
                     </Box>
                 </Box>
             )}
