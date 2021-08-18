@@ -14,7 +14,7 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
     
     const [userData, setUserData] = useState({ username: '', password: ' '});
 
-    const [login] = useMutation(LOGIN_USER);
+    const [login, { error }] = useMutation(LOGIN_USER);
 
     const handleInputChange = (event) => {
         const { name, value } = event.target;
@@ -28,15 +28,17 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
                 variables: { ...userData } 
             });
             Auth.login(data.login.token);
+
+            if (data.login.token) {
+                setUserData({
+                    username: '', 
+                    password: ''
+                });
+            }
         }
         catch (err) {
             console.error(err);
         }
-
-        setUserData({
-            username: '', 
-            password: ''
-        });
     };
 
     if (loginModal) {
@@ -66,7 +68,10 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
                         onClick={() => {setLoginModal(false)}}
                     />
                     <Box className={classes.loginContainer}>
-                        <form className={classes.loginForm}> 
+                        <form 
+                            className={classes.loginForm} 
+                            onSubmit={e => e.preventDefault()}
+                        > 
                             <Typography className={classes.loginTitle}>
                                 Login
                             </Typography>
@@ -84,6 +89,7 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
                                 id='login-username'
                                 className={classes.input}
                                 autoComplete='on'
+                                required
                             />
 
                             <label htmlFor='password'>
@@ -99,14 +105,14 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
                                 id='login-password'
                                 className={classes.input}
                                 autoComplete='on'
+                                required
                             />
 
                             <Box className={classes.buttonDiv}>
-                                <button 
-                                    type='button' 
+                                <button
+                                    type='submit'  
                                     onClick={() => {
                                         loginSubmit()
-                                        setLoginModal(false)
                                     }}
                                     className={classes.loginButton}
                                 >
@@ -116,6 +122,11 @@ export default function Login({ loginModal, setLoginModal, signupModal }) {
                                 </button>   
                             </Box>
                         </form>
+                        {error && 
+                            <Typography className={classes.loginError} variant='h5'>
+                                Login failed
+                            </Typography>
+                        }
                     </Box>
                 </Box> 
             )}

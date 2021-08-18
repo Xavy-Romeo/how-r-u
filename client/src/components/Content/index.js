@@ -62,11 +62,11 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                             </Grid>
                             <Grid item xs={12} lg={8}>
                                 <Grid container  style={{ minWidth: '100%'}}>
-                                    <Grid item xs={1} xl={0}></Grid>
+                                    <Grid item xs={1} xl={false}></Grid>
                                     <Grid item xs={10} xl={12}>
                                         <Carousel autoPlay={4} style={{minWidth: '100%'}} />    
                                     </Grid>
-                                    <Grid item xs={1} xl={0}></Grid>
+                                    <Grid item xs={1} xl={false}></Grid>
                                 </Grid>
                             </Grid>
                         </Grid>

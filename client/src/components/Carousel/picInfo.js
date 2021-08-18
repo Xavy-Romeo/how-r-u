@@ -1,4 +1,3 @@
-import Psychology from '../../assets/Images/psychology.jpg';
 import Spiritualism from '../../assets/Images/spiritualism.jpg';
 import Stretch from '../../assets/Images/lake-stretch.jpg';
 import TaiChi from '../../assets/Images/tai-chi.jpg';
