@@ -13,37 +13,38 @@ const useStyles = makeStyles({
         marginBottom: '2rem',
         backgroundColor: 'orange',
     },
-    emotions: {
-        paddingTop: '2rem',
-        paddingBottom: '3rem',
-        marginBottom: '2rem',
-        backgroundColor: 'lightgreen',
-    },
-    moodContainer: {
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'center'
-    },
-    imgStyle: {
-        borderRadius: '50%',
-
-        margin: '1.25rem 0 .25rem 0',
-        '&:hover':{
-          boxShadow: '5px 10px 15px black'
-        }
-    },
-    span: {
-        display: 'inline-block',
-        position: 'relative',
-        textShadow: '1px 1px 1px white',
-        color: 'rgb(36, 8, 88)',
-        fontWeight: 'bold',
-        fontSize: '22px',
-        margin: '0 auto'
+    logoSubHeader: {
+        width: '400px',
+        height: '400px',
+        '@media (max-width:1279px)': {
+            display: 'flex',
+            margin: '0 auto'
+        },
+        '@media (max-width:959px)': {
+            width: '300px',
+            height: '300px',
+            display: 'flex',
+            margin: '0 auto'
+        },
+        '@media (max-width:599px)': {
+            width: '250px',
+            height: '250px',
+        },
     },
     button: {
         marginRight: '1rem',
     },
+    infoContainer: {
+        position: 'relative',
+        display: 'flex',
+        flexWrap: 'nowrap',
+        justifyContent: 'space-around',
+        paddingTop: '2rem',
+        paddingBottom: '2rem',
+        marginBottom: '2rem',
+        backgroundColor: 'orange',
+                        
+    }
 });
 
 export default useStyles;

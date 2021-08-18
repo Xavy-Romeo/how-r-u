@@ -8,7 +8,6 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
-import Hidden from '@material-ui/core/Hidden';
 
 import Login from '../Login';
 import Signup from '../SignUp';
@@ -38,15 +37,13 @@ export default function Header({ urlEndpoint, setUrlEndpoint }) {
               ? classes.toolBar2
               : '' }`}
         > 
-          {/* <Hidden xsDown> */}
-            <Box
-              onClick={() => setUrlEndpoint('HOME')}
-            > 
-              <NavLink to='/'>
-                <img src={Logo} className={classes.logoHeader} alt='logo' />
-              </NavLink>
-            </Box>
-          {/* </Hidden> */}
+          <Box
+            onClick={() => setUrlEndpoint('HOME')}
+          > 
+            <NavLink to='/'>
+              <img src={Logo} className={classes.logoHeader} alt='logo' />
+            </NavLink>
+          </Box>
           
           <Grid container justifyContent='space-between' alignItems='center'>
             <Grid item xs={12} sm={9} md={10}>

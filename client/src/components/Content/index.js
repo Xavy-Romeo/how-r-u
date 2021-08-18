@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 import Box from '@material-ui/core/Box';
 import Grid from '@material-ui/core/Grid';
 
 import logo_transparent from '../../assets/logo_transparent.png';
-import happy from '../../assets/happy.jpg';
-import okay from '../../assets/okay.jpg';
-import anxious from '../../assets/anxious.jpg';
-import sad from '../../assets/sad.jpg';
 import Carousel from '../Carousel';
 
-import Tools from '../Tools';
+import Info from '../Info';
 import useStyles from './styles';  
 import { meditation, activities, books } from './dataInfo';
+import EmotionBar from '../EmotionBar';
  
 export default function Content({ urlEndpoint, setUrlEndpoint }) {  
     const classes = useStyles();
@@ -60,89 +57,32 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                         className={classes.topHeader}
                     >
                         <Grid container direction='row'>
-                            <Grid item xs={3}>
-                                <img width='400' height='400' src={logo_transparent} alt='logo' />
+                            <Grid item xs={12} lg={3}>
+                                <img src={logo_transparent} className={classes.logoSubHeader} alt='logo' />
                             </Grid>
-                            <Grid item xs={8}>
-                                <Carousel autoPlay={4}/>
+                            <Grid item xs={12} lg={8}>
+                                <Grid container  style={{ minWidth: '100%'}}>
+                                    <Grid item xs={1} xl={0}></Grid>
+                                    <Grid item xs={10} xl={12}>
+                                        <Carousel autoPlay={4} style={{minWidth: '100%'}} />    
+                                    </Grid>
+                                    <Grid item xs={1} xl={0}></Grid>
+                                </Grid>
                             </Grid>
                         </Grid>
                     </Box>
                 </>
             : null
             }
-            <Box
-                display='flex'
-                flexWrap='nowrap'
-                justifyContent='space-around'
-                className={classes.emotions}
-            >
-                <Box className={classes.moodContainer}>
-                    <NavLink to='/happy'>
-                        <img
-                            className={classes.imgStyle}
-                            width='200'
-                            height='200'
-                            src={happy}
-                            alt='Happy'
-                        />
-                        
-                    </NavLink>
-                    <span className={classes.span}>Happy</span>
-                </Box>
-                <Box className={classes.moodContainer}>
-                    <NavLink to='/okay'>
-                        <img
-                            className={classes.imgStyle}
-                            width='200'
-                            height='200'
-                            src={okay}
-                            alt='Okay'
-                        />
-                        </NavLink>
-                    <span className={classes.span}>Okay</span>
-                </Box>
-                <Box className={classes.moodContainer}>
-                    <NavLink to='/anxious'>
-                        <img
-                            className={classes.imgStyle}
-                            width='200'
-                            height='200'
-                            src={anxious}
-                            alt='Anxious'
-                        />
-                    </NavLink>
-                    <span className={classes.span}>Anxious</span>
-                </Box>
-                <Box className={classes.moodContainer}>
-                    <NavLink to='/sad'>
-                        <img
-                            className={classes.imgStyle}
-                            width='200'
-                            height='200'
-                            src={sad}
-                            alt='Sad'
-                        />
-                        </NavLink>
-                    <span className={classes.span}>Sad</span>
-                </Box>
-            </Box>
+            
+            <EmotionBar />
+
             {urlEndpoint === 'HOME'
-                ?   <Box
-                        display='flex'
-                        flexWrap='nowrap'
-                        justifyContent='space-around'
-                        className={classes.topHeader}
-                    >
-                        <Box
-                            display='flex'
-                            flexWrap='nowrap'
-                            justifyContent='space-around'
-                            className={classes.topHeader}
-                        >
+                ?   <Box className={classes.infoContainer}>
+                        <Box className={classes.infoContainer}>
                             {meditation.map((item, idx) => {
                                 return (
-                                    <Tools
+                                    <Info
                                         key={idx}
                                         mydata={item.mydata}
                                         meditation={item.meditation}
@@ -153,15 +93,10 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                                 );
                             })}
                         </Box>
-                        <Box
-                            display='flex'
-                            flexWrap='nowrap'
-                            justifyContent='space-around'
-                            className={classes.topHeader}
-                        >
+                        <Box className={classes.infoContainer}>
                             {activities.map((item, idx) => {
                                 return (
-                                    <Tools
+                                    <Info
                                         key={idx}
                                         mydata={item.mydata}
                                         activities={item.activities}
@@ -172,15 +107,10 @@ export default function Content({ urlEndpoint, setUrlEndpoint }) {
                                 );
                             })}
                         </Box>
-                        <Box
-                            display='flex'
-                            flexWrap='nowrap'
-                            justifyContent='space-around'
-                            className={classes.topHeader}
-                        >
+                        <Box className={classes.infoContainer}>
                             {books.map((item, idx) => {
                                 return (
-                                    <Tools
+                                    <Info
                                         key={idx}
                                         mydata={item.mydata}
                                         books={item.books}

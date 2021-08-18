@@ -15,10 +15,6 @@ const picInfo = [
         des: 'two women stretching near a lake'
     },
     {
-        image: Psychology,
-        des: '3D human body'
-    },
-    {
         image: TaiChi,
         des: 'tai chi'
     },
