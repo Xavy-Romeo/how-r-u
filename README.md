@@ -24,8 +24,8 @@ Connecting you with direct resources to get you through the day based on your mo
   -   Once I the User reaches that page with resources, I can choose videos, music, activities or books that will assist me.
 
 ## Screenshots:
-![howru screenshot](https://user-images.githubusercontent.com/71949043/126914290-6c968732-2f2d-4267-b0b1-0d5f4a662ac1.png)
-![howru happy screenshot](https://user-images.githubusercontent.com/71949043/126922502-e09db0c7-3dd7-45a5-906c-9acf37688a60.png)
+![HowRU Page](https://user-images.githubusercontent.com/79165884/136230481-1a5cb457-c778-48d7-b2a8-49c22365b389.png)
+![HowRU Page2](https://user-images.githubusercontent.com/79165884/136230983-fa980442-509f-48a9-9fc3-66bf9d5d0b8e.png)
 
 
 ## Usage:
